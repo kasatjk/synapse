@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/BTElephants.css';
-
-const mainHeaderBg = "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&q=80&w=1600";
+import elephant from '../assets/BTElephants/elephant.avif';
 
 export default function BTElephants() {
   return (
@@ -9,7 +8,7 @@ export default function BTElephants() {
       
       <header 
         className="bt-header" 
-        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(${mainHeaderBg})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(${elephant})` }}
       >
         <div className="bt-header-content">
           <h1 className="bt-title">Слони</h1>

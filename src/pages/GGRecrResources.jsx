@@ -1,44 +1,51 @@
 import React from 'react';
 import '../styles/GGRecrResources.css';
+import header from '../assets/GGRecrResources/header.avif';
+import beach from '../assets/GGRecrResources/beach.jpg';
+import skiing from '../assets/GGRecrResources/skiing.jpg';
+import balneotherapy from '../assets/GGRecrResources/balneotherapy.jpg';
+import cathedral from '../assets/GGRecrResources/cathedral.jpg';
+import nationalPark from '../assets/GGRecrResources/national-park.jpg';
+import geyser from '../assets/GGRecrResources/geyser.jpg';
 
-const headerBg = "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1600";
+const headerBg = header;
 
 const resourcesData = [
   {
     id: 1,
     title: "Пляжні",
     desc: "Середземноморські узбережжя південної Європи. Приносить прибуток від готельного та ресторанного бізнесу.",
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600"
+    img: beach
   },
   {
     id: 2,
     title: "Гірськолижні",
     desc: "Альпи та Карпати - популярні напрямки для зимових видів спорту. Норвезькі фіорди - ідеальні для круїзів та подорожей.",
-    img: "https://images.unsplash.com/photo-1551524164-687a55dd1126?auto=format&fit=crop&q=80&w=600"
+    img: skiing
   },
   {
     id: 3,
     title: "Бальнеологічні",
     desc: "Джерела мінеральних вод, як у м.Карлові Вари та лікувальні грязі широко використовуються для оздоровлення.",
-    img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
+    img: balneotherapy
   },
   {
     id: 4,
     title: "Історико-культурні",
     desc: "Пам'ятки архітектури, старовинні замки та музеї, основна цінність Європейської історії та культури.",
-    img: "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?auto=format&fit=crop&q=80&w=600"
+    img: cathedral
   },
   {
     id: 5,
     title: "Лісові та нац.парки",
     desc: "Масиви лісів і національні парки для екотуризму та кемпінгу. Також збереження біорізноманіття та природних ландшафтів.",
-    img: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=600"
+    img: nationalPark
   },
   {
     id: 6,
     title: "Інші природні",
     desc: "Гейзери, вулкани, льодовики тощо. Вони приваблюють туристів, які цікавляться природними явищами та захоплюються величчю природи.",
-    img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=600"
+    img: geyser
   }
 ];
 
