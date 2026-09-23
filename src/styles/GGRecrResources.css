@@ -1,0 +1,192 @@
+:root {
+  --clr-surface: #ffffff;
+  --clr-bg: #f8fafc;
+  --clr-text-main: #1e293b;
+  --clr-text-muted: #64748b;
+  --clr-accent-light: #93c5fd; /* Колір для акцентів у підсумку */
+  
+  --easing-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --easing-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gg-card {
+  max-width: 1024px;
+  margin: 2rem auto;
+  background-color: var(--clr-surface);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.15);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  animation: slideUpFade 0.6s var(--easing-smooth) forwards;
+}
+
+.gg-header {
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.gg-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.gg-subtitle {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+
+.gg-main {
+  padding: 2.5rem;
+}
+
+/* =========================================
+   СІТКА КАРТОК (3x2 Wide)
+   ========================================= */
+.gg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gg-resource-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-bg);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s var(--easing-spring), box-shadow 0.3s ease;
+}
+
+.gg-resource-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gg-resource-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.gg-resource-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.gg-resource-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--clr-text-main);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.gg-resource-content p {
+  margin: 0;
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* =========================================
+   ПІДСУМОК (Вбудований з вашого шаблону)
+   ========================================= */
+.gg-summary {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: var(--clr-surface);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-top: 2.5rem;
+  transition: transform 0.4s var(--easing-spring);
+}
+
+.gg-summary:hover { 
+  transform: translateY(-4px); 
+}
+
+.gg-summary h3 {
+  font-size: 1.15rem;
+  color: var(--clr-accent-light);
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gg-summary p { 
+  color: #e2e8f0; 
+  line-height: 1.6; 
+  margin: 0; 
+  font-size: 1rem; 
+}
+
+/* =========================================
+   АДАПТИВНІСТЬ ДЛЯ ПЛАНШЕТІВ (2x3 Grid)
+   ========================================= */
+@media (max-width: 768px) {
+  .gg-header {
+    padding: 2.5rem 1rem;
+  }
+  
+  .gg-title {
+    font-size: 2.1rem;
+  }
+
+  .gg-main {
+    padding: 1.25rem;
+  }
+
+  /* Перебудова на 2 колонки для планшетів */
+  .gg-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .gg-resource-img {
+    height: 120px;
+  }
+
+  .gg-resource-content {
+    padding: 1rem;
+  }
+
+  .gg-resource-content h4 {
+    font-size: 1.05rem;
+  }
+
+  .gg-resource-content p {
+    font-size: 0.85rem;
+  }
+  
+  .gg-summary {
+    margin-top: 2rem;
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gg-resource-img {
+    height: 200px;
+  }
+}

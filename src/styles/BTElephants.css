@@ -1,0 +1,190 @@
+:root {
+  --bt-clr-surface: #ffffff;
+  --bt-clr-text-main: #334155;
+  --bt-clr-border: #cbd5e1;
+  --bt-clr-primary: #2e7d32;
+  --bt-clr-primary-light: #4caf50;
+  --bt-clr-row-alt: #f8fafc;
+  --bt-easing-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bt-card {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: var(--bt-clr-surface);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.15);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  animation: slideUpFade 0.6s var(--bt-easing-smooth) forwards;
+}
+
+.bt-header {
+  background-size: cover;
+  background-position: center;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.bt-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.bt-subtitle {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+
+.bt-main {
+  padding: 2rem;
+}
+
+.bt-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.bt-table-header-row {
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.bt-th {
+  padding: 1.5rem 1.25rem;
+  text-align: left;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  border-bottom: 3px solid var(--bt-clr-primary-light);
+}
+
+.bt-td {
+  padding: 1.15rem 1.25rem;
+  border-bottom: 1px solid var(--bt-clr-border);
+  color: var(--bt-clr-text-main);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+.bt-table tbody tr:nth-child(even) {
+  background-color: var(--bt-clr-row-alt);
+}
+
+.bt-table tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.3s ease;
+}
+
+.bt-td strong {
+  color: var(--bt-clr-primary);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   МОБІЛЬНА АДАПТАЦІЯ (Responsive Block Table)
+   ========================================= */
+@media (max-width: 768px) {
+  .bt-header {
+    padding: 2.5rem 1rem;
+  }
+  .bt-title {
+    font-size: 2.1rem;
+  }
+  .bt-main {
+    padding: 1rem;
+  }
+
+  /* Перетворення таблиці на блокову структуру */
+  .bt-table, .bt-table tbody, .bt-table tr, .bt-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Приховуємо стандартний заголовок */
+  .bt-table thead {
+    display: none;
+  }
+
+  /* Кожен рядок стає окремою "карткою" */
+  .bt-table tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--bt-clr-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: var(--bt-clr-surface);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Вимикаємо "зебру" та ховер для мобільного, щоб картки виглядали чисто */
+  .bt-table tbody tr:nth-child(even) {
+    background-color: var(--bt-clr-surface);
+  }
+  .bt-table tbody tr:hover {
+    background-color: var(--bt-clr-surface);
+  }
+
+  /* Стилізація комірок всередині картки */
+  .bt-td {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--bt-clr-border);
+    text-align: left;
+  }
+
+  .bt-td:last-child {
+    border-bottom: none;
+  }
+
+  /* Генерація підписів з атрибута data-label */
+  .bt-td::before {
+    content: attr(data-label);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 800;
+    color: var(--bt-clr-text-main);
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  /* Особлива стилізація для першої колонки ("Критерій"), яка виступає заголовком картки */
+  .bt-td.bt-td-title {
+    background-color: var(--bt-clr-primary);
+    color: #ffffff;
+    border-bottom: none;
+  }
+  
+  .bt-td.bt-td-title strong {
+    color: #ffffff;
+    font-size: 1.2rem;
+  }
+  
+  .bt-td.bt-td-title::before {
+    color: #ffffff;
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: var(--clr-bg);
+  padding: 0; /* Removed padding on mobile to allow full bleed if necessary, handled by card margins */
+  color: var(--clr-text-main);
+  box-sizing: border-box;
+}
+
+footer {
+  text-align: center;
+  font-size: 1rem;
+  background-color: var(--clr-text-muted);
+  color: var(--clr-surface);
+  margin-top: 2rem;
+  height: 3rem;
+}
