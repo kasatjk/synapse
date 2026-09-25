@@ -20,7 +20,6 @@ export default function HomePage() {
               to={subject.path}
               data-subject={subject.id}
             >
-              <p className="work-card-kicker">Предмет</p>
               <h3>{subject.title}</h3>
               <p>{subject.description}</p>
             </Link>

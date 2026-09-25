@@ -40,6 +40,16 @@ export const works = [
     documentTitle: 'Слони | Біологія | Синапс',
   },
   {
+    id: 'scrapie',
+    subject: 'biology',
+    slug: 'scrapie',
+    path: '/biology/scrapie',
+    title: 'Scrapie',
+    shortTitle: 'Пріонне захворювання овець',
+    description: 'Захворювання, що викликає дегенерацію нервової системи у овець і кіз через пріони.',
+    documentTitle: 'Scrapie | Біологія | Синапс',
+  },
+  {
     id: 'secondary-sector',
     subject: 'geography',
     slug: 'secondary-sector',

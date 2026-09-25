@@ -1,0 +1,57 @@
+.scrapie-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.scrapie-intro {
+  margin-bottom: 0.5rem;
+}
+
+.scrapie-section-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  color: var(--subject-primary);
+  border-bottom: 3px solid var(--subject-accent-light);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  text-align: center;
+  opacity: 0;
+  animation: slideUpFade 0.5s var(--easing-smooth) 0.1s forwards;
+}
+
+.scrapie-intro p {
+  margin: 0;
+  color: var(--clr-text-main);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.scrapie-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.scrapie-grid .summary-block {
+  margin-top: 0;
+}
+
+.scrapie-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+  list-style-position: outside;
+}
+
+.scrapie-list li + li {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .scrapie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
