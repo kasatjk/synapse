@@ -1,0 +1,92 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-bg);
+  color: var(--clr-text-main);
+}
+
+.app-header {
+  background-color: var(--clr-surface);
+  border-bottom: 1px solid var(--clr-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.app-header-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.app-logo {
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: 1.15rem;
+  color: var(--clr-text-main);
+}
+
+.app-logo span {
+  color: var(--clr-text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-left: 0.4rem;
+}
+
+.app-nav {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.app-nav a {
+  text-decoration: none;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--clr-text-muted);
+}
+
+.app-nav a:hover,
+.app-nav a.active {
+  background-color: #f1f5f9;
+  color: var(--clr-text-main);
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 1rem;
+  background-color: var(--clr-text-muted);
+  color: var(--clr-surface);
+  margin-top: auto;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-footer p {
+  line-height: 3rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .app-main {
+    padding: 2rem 1.5rem 4rem;
+  }
+}

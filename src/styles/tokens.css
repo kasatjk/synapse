@@ -1,0 +1,68 @@
+:root {
+  --clr-bg: #f8fafc;
+  --clr-surface: #ffffff;
+  --clr-text-main: #0f172a;
+  --clr-text-muted: #64748b;
+  --clr-border: #e2e8f0;
+  --clr-row-alt: #f8fafc;
+
+  --radius: 1.25rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+
+  --easing-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --easing-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font: system-ui, -apple-system, sans-serif;
+
+  --subject-primary: #0f172a;
+  --subject-primary-light: #334155;
+  --subject-accent: #64748b;
+  --subject-accent-light: #cbd5e1;
+}
+
+[data-subject='biology'] {
+  --subject-primary: #047857;
+  --subject-primary-light: #059669;
+  --subject-accent: #10b981;
+  --subject-accent-light: #a7f3d0;
+  --clr-success-bg: #ecfdf5;
+  --clr-success-border: #a7f3d0;
+  --clr-success-text: #064e3b;
+  --clr-danger-bg: #fff1f2;
+  --clr-danger-border: #fecdd3;
+  --clr-danger-text: #881337;
+}
+
+[data-subject='geography'] {
+  --subject-primary: #1e3a8a;
+  --subject-primary-light: #3b82f6;
+  --subject-accent: #f59e0b;
+  --subject-accent-light: #fde68a;
+  --clr-info-bg: #eff6ff;
+  --clr-info-border: #bfdbfe;
+  --clr-info-text: #1e40af;
+  --clr-eco-bg: #fefce8;
+  --clr-eco-border: #fef08a;
+  --clr-eco-text: #854d0e;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

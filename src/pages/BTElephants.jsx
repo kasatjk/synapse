@@ -1,76 +1,105 @@
-import React from 'react';
 import '../styles/BTElephants.css';
+import ReportHero from '../components/ReportHero.jsx';
 import elephant from '../assets/BTElephants/elephant.avif';
+
+const rows = [
+  {
+    criterion: 'Морфологічний',
+    savanna: ['Великі вуха', 'Увігнута спина', 'Бивні розвинені у всіх особин'],
+    indian: ['Малі вуха', 'Пряма спина', 'Бивні розвинені у самців'],
+  },
+  {
+    criterion: 'Каріотипічний',
+    savanna: ['Абсолютно ідентичні', 'Диплоїдний набір 56 хромосом'],
+    indian: ['-=-'],
+  },
+  {
+    criterion: 'Фізіологічний',
+    savanna: ['Ідентичні', 'Травоїдні', '60-70 років', 'Вагітність триває 22 місяці'],
+    indian: ['-=-'],
+  },
+  {
+    criterion: 'Репродуктивний',
+    savanna: [
+      'Природне схрещування відсутнє',
+      'Географічно не контактують',
+      'Єдиний відомий гібрид (1978) був нежиттєздатний',
+    ],
+    indian: ['-=-'],
+  },
+  {
+    criterion: 'Біохімічний',
+    savanna: [
+      'Базові білкові структури спільні',
+      'Значна розбіжність макромолекул',
+      'Підтверджує розходження їх ліній 7,6 млн років тому',
+    ],
+    indian: ['-=-'],
+  },
+  {
+    criterion: 'Географічний',
+    savanna: ['Ендемік Африки', 'Південно-східна Африка'],
+    indian: ['Країни Пд та Пд-Сх Азії', 'Індія, Шрі-Ланка, Суматра тощо'],
+  },
+  {
+    criterion: 'Екологічний',
+    savanna: ['Відкриті ландшафти', 'Савани, напівпустелі', "В раціоні переважає трав'яниста рослинність"],
+    indian: ['Густі тропічні ліси', 'Субтропічні ліси', 'В раціоні переважають пагони та листя'],
+  },
+];
+
+function CellList({ items }) {
+  return (
+    <ul className="bt-cell-list">
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
 
 export default function BTElephants() {
   return (
-    <article className="bt-card">
-      
-      <header 
-        className="bt-header" 
-        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(${elephant})` }}
-      >
-        <div className="bt-header-content">
-          <h1 className="bt-title">Слони</h1>
-          <p className="bt-subtitle">Порівняння слона саванного та індійського</p>
-        </div>
-      </header>
+    <article className="report-card">
+      <ReportHero
+        title="Слони"
+        subtitle="Порівняння слона саванного та індійського"
+        backgroundImage={elephant}
+        align="center"
+      />
 
-      <main className="bt-main">
+      <div className="report-body bt-body">
         <table className="bt-table">
-          
           <thead>
-            <tr 
-              className="bt-table-header-row" 
-              style={{ backgroundImage: `linear-gradient(rgba(46, 125, 50, 0.85), rgba(46, 125, 50, 0.95))` }}
-            >
-              <th className="bt-th">Критерії</th>
-              <th className="bt-th">Слон саванний</th>
-              <th className="bt-th">Слон індійський</th>
+            <tr className="bt-table-header-row">
+              <th className="bt-th" scope="col">
+                Критерії
+              </th>
+              <th className="bt-th" scope="col">
+                Слон саванний
+              </th>
+              <th className="bt-th" scope="col">
+                Слон індійський
+              </th>
             </tr>
           </thead>
-          
           <tbody>
-            <tr>
-              <td className="bt-td bt-td-title" data-label="Критерій"><strong>Морфологічний</strong></td>
-              <td className="bt-td" data-label="Слон саванний">- Великі вуха <br /> - Увігнута спина <br /> - Бивні розвинені у всіх особин</td>
-              <td className="bt-td" data-label="Слон індійський">- Малі вуха <br /> - Пряма спина <br /> - Бивні розвинені у самців</td>
-            </tr>
-            <tr>
-              <td className="bt-td bt-td-title" data-label="Критерій"><strong>Каріотипічний</strong></td>
-              <td className="bt-td" data-label="Слон саванний">- Абсолютно ідентичні  <br /> - Диплоїдний набір 56 хромосом</td>
-              <td className="bt-td" data-label="Слон індійський">-=-</td>
-            </tr>
-            <tr>
-              <td className="bt-td bt-td-title" data-label="Критерій"><strong>Фізіологічний</strong></td>
-              <td className="bt-td" data-label="Слон саванний">- Ідентичні <br /> - Травоїдні <br /> - 60-70 років <br /> - Вагітність триває 22 місяці</td>
-              <td className="bt-td" data-label="Слон індійський">-=-</td>
-            </tr>
-            <tr>
-              <td className="bt-td bt-td-title" data-label="Критерій"><strong>Репродуктивний</strong></td>
-              <td className="bt-td" data-label="Слон саванний">- Природне схрещування відсутнє <br /> - Географічно не контактують <br /> - Єдиний відомий гібрид (1978) був нежиттєздатний</td>
-              <td className="bt-td" data-label="Слон індійський">-=-</td>
-            </tr>
-            <tr>
-              <td className="bt-td bt-td-title" data-label="Критерій"><strong>Біохімічний</strong></td>
-              <td className="bt-td" data-label="Слон саванний">- Базові білкові структури спільні <br /> - Значна розбіжність макромолекул <br /> - Підтверджує розходження їх ліній 7,6 млн років тому</td>
-              <td className="bt-td" data-label="Слон індійський">-=-</td>
-            </tr>
-            <tr>
-              <td className="bt-td bt-td-title" data-label="Критерій"><strong>Географічний</strong></td>
-              <td className="bt-td" data-label="Слон саванний">- Ендемік Африки <br /> - Південно-східна Африка</td>
-              <td className="bt-td" data-label="Слон індійський">- Країни Пд та Пд-Сх Азії <br /> - Індія, Шрі-Ланка, Суматра тощо</td>
-            </tr>
-            <tr>
-              <td className="bt-td bt-td-title" data-label="Критерій"><strong>Екологічний</strong></td>
-              <td className="bt-td" data-label="Слон саванний">- Відкриті ландшафти <br /> - Савани, напівпустелі <br /> - В раціоні переважає трав'яниста рослинність</td>
-              <td className="bt-td" data-label="Слон індійський">- Густі тропічні ліси <br /> - Субтропічні ліси <br /> - В раціоні переважають пагони та листя</td>
-            </tr>
+            {rows.map((row) => (
+              <tr key={row.criterion}>
+                <th className="bt-td bt-td-title" data-label="Критерій" scope="row">
+                  {row.criterion}
+                </th>
+                <td className="bt-td" data-label="Слон саванний">
+                  <CellList items={row.savanna} />
+                </td>
+                <td className="bt-td" data-label="Слон індійський">
+                  <CellList items={row.indian} />
+                </td>
+              </tr>
+            ))}
           </tbody>
-
         </table>
-      </main>
-      
+      </div>
     </article>
   );
 }
