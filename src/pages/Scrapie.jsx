@@ -1,7 +1,7 @@
 import '../styles/Scrapie.css';
 import ReportHero from '../components/ReportHero.jsx';
 import SummaryBlock from '../components/SummaryBlock.jsx';
-import sheep from '../../dist/assets/sheep.jpg';
+import sheep from '../assets/Scrapie/sheep.jpg';
 
 const mechanisms = [
   'Збудником є пріон PrPSc, який змінює нормальну форму клітинного білка PrPC.',
@@ -31,16 +31,16 @@ export default function Scrapie() {
   return (
     <article className="report-card">
       <ReportHero
-        title="Scrapie"
+        title="Скрепі"
         subtitle="Пріонне захворювання овець і кіз"
         backgroundImage={sheep}
       />
 
       <div className="report-body scrapie-body">
         <section className="scrapie-intro">
-          <h2 className="scrapie-section-title">Що таке Scrapie</h2>
+          <h2 className="scrapie-section-title">Що таке Скрепі</h2>
           <p>
-            Scrapie (Скрепі) — це інфекційне захворювання овець і кіз, яке вражає нервову систему.
+            Скрепі (Scrapie) — це інфекційне захворювання овець і кіз, яке вражає нервову систему.
             Воно належить до пріонних хвороб, тому патоген не містить нуклеїнових кислот,
             а є аномальною формою природного білка, що утворюється в клітинах мозку.
           </p>

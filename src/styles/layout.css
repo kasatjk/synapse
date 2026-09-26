@@ -15,6 +15,7 @@
 }
 
 .app-header-inner {
+  position: relative;
   max-width: 72rem;
   margin: 0 auto;
   padding: 0.85rem 1.25rem;
@@ -25,11 +26,25 @@
 }
 
 .app-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-family: var(--font-mono);
+  font-weight: 400;
   font-size: 1.15rem;
   color: var(--clr-text-main);
+}
+
+.app-logo-mark {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 180ms var(--easing-spring);
+}
+
+.app-logo:hover .app-logo-mark,
+.app-logo:focus-visible .app-logo-mark {
+  transform: rotate(-10deg) scale(1.08);
 }
 
 .app-logo span {
@@ -39,10 +54,42 @@
   margin-left: 0.4rem;
 }
 
+.navigation {
+  display: flex;
+}
+
 .app-nav {
   display: flex;
   gap: 0.35rem;
   flex-wrap: wrap;
+  margin-right: 1rem;
+}
+
+.menu-toggle {
+  margin-top: 0.25rem;
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--clr-border);
+  border-radius: 50%;
+  background: var(--clr-surface);
+  color: var(--clr-text-main);
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.menu-toggle:hover {
+  background: var(--clr-nav-hover);
+}
+
+.menu-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
 }
 
 .app-nav a {
@@ -52,12 +99,46 @@
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--clr-text-muted);
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
 .app-nav a:hover,
 .app-nav a.active {
-  background-color: #f1f5f9;
+  background-color: var(--clr-nav-hover);
   color: var(--clr-text-main);
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.theme-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--clr-border);
+  border-radius: 50%;
+  background: var(--clr-surface);
+  color: var(--clr-text-main);
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.theme-toggle:hover {
+  background: var(--clr-nav-hover);
+  transform: rotate(12deg);
+}
+
+.theme-toggle:focus-visible {
+  transform: rotate(12deg);
+}
+
+.theme-toggle svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .app-main {
@@ -71,8 +152,8 @@
 .site-footer {
   text-align: center;
   font-size: 1rem;
-  background-color: var(--clr-text-muted);
-  color: var(--clr-surface);
+  background-color: var(--clr-surface);
+  color: var(--clr-text-main);
   margin-top: auto;
   min-height: 3rem;
   display: flex;
@@ -88,5 +169,49 @@
 @media (min-width: 768px) {
   .app-main {
     padding: 2rem 1.5rem 4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: inline-grid;
+  }
+
+  .app-nav {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0.75rem;
+    left: 0.75rem;
+    z-index: 1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    background: var(--clr-surface);
+    box-shadow: 0 12px 28px -18px rgba(15, 23, 42, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-0.35rem);
+    transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+  }
+
+  .app-nav[data-open='true'] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .app-nav a {
+    border-radius: var(--radius-sm);
+    padding: 0.7rem 0.8rem;
+  }
+
+  .theme-toggle {
+    align-self: flex-start;
+    margin: 0.25rem 0.4rem;
   }
 }

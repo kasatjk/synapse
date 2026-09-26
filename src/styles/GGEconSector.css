@@ -42,7 +42,7 @@
 
 .geo-feature-list li:hover {
   transform: translateX(5px);
-  background: #f1f5f9;
+  background: var(--clr-row-alt);
 }
 
 .geo-feature-list strong {
@@ -85,6 +85,11 @@
 .geo-card-centers:hover,
 .geo-card-gdp:hover {
   transform: translateY(-4px);
+}
+
+.geo-card-centers li,
+.geo-card-gdp li{
+  color: #000;
 }
 
 .geo-card-centers {

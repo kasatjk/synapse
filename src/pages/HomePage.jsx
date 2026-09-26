@@ -1,13 +1,18 @@
 import WorkCard from '../components/WorkCard.jsx';
 import { subjects, works } from '../data/works.js';
 import { Link } from 'react-router-dom';
+import elephantImage from '../assets/BTElephants/elephant.avif';
 
 export default function HomePage() {
   return (
     <div className="home-page">
       <header className="home-hero">
-        <h1>Синапс</h1>
-        <p>Портал учнівських робіт з біології та географії. Оберіть предмет або відкрийте одну з останніх робіт.</p>
+        <div className="home-hero-copy">
+          <h1>Синапс</h1>
+          <p>Портал робіт імені Тетяни Каришевої)))</p>
+          <br />
+          <p>Оберіть предмет та знайдіть необхідну роботу нижче.</p>
+        </div>
       </header>
 
       <section className="home-section">
@@ -23,15 +28,6 @@ export default function HomePage() {
               <h3>{subject.title}</h3>
               <p>{subject.description}</p>
             </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-section">
-        <h2>Останні роботи</h2>
-        <div className="work-grid">
-          {works.map((work) => (
-            <WorkCard key={work.id} work={work} headingLevel="h3" />
           ))}
         </div>
       </section>

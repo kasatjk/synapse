@@ -59,7 +59,7 @@
 }
 
 .bt-table tbody tr:hover {
-  background-color: #f1f5f9;
+  background-color: var(--clr-row-alt);
   transition: background-color 0.3s ease;
 }
 

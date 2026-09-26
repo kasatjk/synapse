@@ -1,10 +1,11 @@
 :root {
-  --clr-bg: #f8fafc;
-  --clr-surface: #ffffff;
+  --clr-bg: #f7f4ed;
+  --clr-surface: #fff;
   --clr-text-main: #0f172a;
   --clr-text-muted: #64748b;
   --clr-border: #e2e8f0;
   --clr-row-alt: #f8fafc;
+  --clr-nav-hover: #f1f5f9;
 
   --radius: 1.25rem;
   --radius-md: 0.75rem;
@@ -12,13 +13,23 @@
 
   --easing-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --easing-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-
-  --font: system-ui, -apple-system, sans-serif;
+  --font: 'Manrope', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   --subject-primary: #0f172a;
   --subject-primary-light: #334155;
   --subject-accent: #64748b;
   --subject-accent-light: #cbd5e1;
+}
+
+html[data-theme='dark'] {
+  --clr-bg: #111827;
+  --clr-surface: #1f2937;
+  --clr-text-main: #f8fafc;
+  --clr-text-muted: #aab7c7;
+  --clr-border: #374151;
+  --clr-row-alt: #182230;
+  --clr-nav-hover: #334155;
 }
 
 [data-subject='biology'] {
@@ -64,5 +75,27 @@
   }
   to {
     width: 100%;
+  }
+}
+
+html.theme-transitioning,
+html.theme-transitioning * {
+  transition:
+    color 420ms ease,
+    background-color 420ms ease,
+    border-color 420ms ease,
+    box-shadow 420ms ease,
+    fill 420ms ease,
+    stroke 420ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

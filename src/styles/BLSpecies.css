@@ -94,7 +94,7 @@
 
 .lab-taxonomy h4 {
   font-weight: 800;
-  color: var(--clr-success-text);
+  color: var(--subject-primary);
   margin: 0 0 0.75rem 0;
 }
 
@@ -132,6 +132,14 @@
   color: var(--clr-success-text);
   margin: 0 0 0.5rem 0;
   font-weight: 800;
+}
+
+.lab-card-similar p {
+  color: #000;
+}
+
+.lab-card-diff p {
+  color: #000;
 }
 
 .lab-card-diff {
