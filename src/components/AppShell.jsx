@@ -112,6 +112,8 @@ export default function AppShell() {
       </main>
 
       <footer className="site-footer">
+        <p>Синапс імені Тетяни Каришевої</p>
+        <p>Портал учнівських робіт</p>
         <p>Данило Павлюк :)</p>
       </footer>
     </div>

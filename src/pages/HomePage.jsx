@@ -9,7 +9,7 @@ export default function HomePage() {
       <header className="home-hero">
         <div className="home-hero-copy">
           <h1>Синапс</h1>
-          <p>Портал робіт імені Тетяни Каришевої)))</p>
+          <p>імені Тетяни Каришевої</p>
           <br />
           <p>Оберіть предмет та знайдіть необхідну роботу нижче.</p>
         </div>
