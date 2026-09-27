@@ -38,12 +38,14 @@
   cursor: crosshair;
 }
 
-.lab-image:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-  z-index: 10;
-  position: relative;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+@media (hover: hover) and (pointer: fine) {
+  .lab-image:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .lab-content-wrapper {
@@ -88,8 +90,10 @@
   transition: border-color 0.3s ease;
 }
 
-.lab-taxonomy:hover {
-  border-color: #cbd5e1;
+@media (hover: hover) and (pointer: fine) {
+  .lab-taxonomy:hover {
+    border-color: #cbd5e1;
+  }
 }
 
 .lab-taxonomy h4 {
@@ -119,14 +123,10 @@
   transition: transform 0.4s var(--easing-spring);
 }
 
-.lab-card-similar:hover,
-.lab-card-diff:hover {
-  transform: translateY(-4px);
-}
-
 .lab-card-similar {
   background-color: var(--clr-success-bg);
   border: 1px solid var(--clr-success-border);
+  color: var(--clr-success-text);
 }
 .lab-card-similar h4 {
   color: var(--clr-success-text);
@@ -134,17 +134,10 @@
   font-weight: 800;
 }
 
-.lab-card-similar p {
-  color: #000;
-}
-
-.lab-card-diff p {
-  color: #000;
-}
-
 .lab-card-diff {
   background-color: var(--clr-danger-bg);
   border: 1px solid var(--clr-danger-border);
+  color: var(--clr-danger-text);
 }
 .lab-card-diff h4 {
   color: var(--clr-danger-text);
@@ -156,6 +149,13 @@
   font-size: 0.95rem;
   margin: 0;
   line-height: 1.6;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lab-card-similar:hover,
+  .lab-card-diff:hover {
+    transform: translateY(-4px);
+  }
 }
 
 @media (min-width: 768px) {

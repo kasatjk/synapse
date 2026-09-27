@@ -150,8 +150,10 @@
   transition: transform 0.4s var(--easing-spring);
 }
 
-.summary-block:hover {
-  transform: translateY(-4px);
+@media (hover: hover) and (pointer: fine) {
+  .summary-block:hover {
+    transform: translateY(-4px);
+  }
 }
 
 .summary-block h2 {
@@ -191,11 +193,18 @@
     background-size 0.45s var(--easing-smooth);
 }
 
-.work-card:hover,
 .work-card:focus-visible {
   transform: translateY(-4px);
   box-shadow: 0 16px 28px -16px rgba(15, 23, 42, 0.35);
   background-size: 100% 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px -16px rgba(15, 23, 42, 0.35);
+    background-size: 100% 100%;
+  }
 }
 
 .work-card-kicker {
@@ -303,9 +312,14 @@
   transition: transform 500ms var(--easing-smooth);
 }
 
-.home-hero-visual:hover img,
 .home-hero-visual:focus-visible img {
   transform: scale(1.04);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-hero-visual:hover img {
+    transform: scale(1.04);
+  }
 }
 
 .home-hero-caption {

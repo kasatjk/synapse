@@ -42,7 +42,6 @@
   transition: transform 180ms var(--easing-spring);
 }
 
-.app-logo:hover .app-logo-mark,
 .app-logo:focus-visible .app-logo-mark {
   transform: rotate(-10deg) scale(1.08);
 }
@@ -80,10 +79,6 @@
   transition: background-color 160ms ease, color 160ms ease;
 }
 
-.menu-toggle:hover {
-  background: var(--clr-nav-hover);
-}
-
 .menu-toggle svg {
   width: 1.25rem;
   height: 1.25rem;
@@ -102,7 +97,6 @@
   transition: background-color 160ms ease, color 160ms ease;
 }
 
-.app-nav a:hover,
 .app-nav a.active {
   background-color: var(--clr-nav-hover);
   color: var(--clr-text-main);
@@ -123,13 +117,29 @@
   transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
-.theme-toggle:hover {
-  background: var(--clr-nav-hover);
+.theme-toggle:focus-visible {
   transform: rotate(12deg);
 }
 
-.theme-toggle:focus-visible {
-  transform: rotate(12deg);
+@media (hover: hover) and (pointer: fine) {
+  .app-logo:hover .app-logo-mark {
+    transform: rotate(-10deg) scale(1.08);
+  }
+
+  .menu-toggle:hover {
+    background: var(--clr-nav-hover);
+  }
+
+  .app-nav a:hover {
+    background-color: var(--clr-nav-hover);
+    color: var(--clr-text-main);
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+
+  .theme-toggle:hover {
+    background: var(--clr-nav-hover);
+    transform: rotate(12deg);
+  }
 }
 
 .theme-toggle svg {

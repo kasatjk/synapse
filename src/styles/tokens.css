@@ -32,6 +32,24 @@ html[data-theme='dark'] {
   --clr-nav-hover: #334155;
 }
 
+html[data-theme='dark'] [data-subject='biology'] {
+  --clr-success-bg: #12352b;
+  --clr-success-border: #2c6b56;
+  --clr-success-text: #a7f3d0;
+  --clr-danger-bg: #3a1d28;
+  --clr-danger-border: #7f3347;
+  --clr-danger-text: #fda4af;
+}
+
+html[data-theme='dark'] [data-subject='geography'] {
+  --clr-info-bg: #172f4c;
+  --clr-info-border: #315b85;
+  --clr-info-text: #bfdbfe;
+  --clr-eco-bg: #3d3518;
+  --clr-eco-border: #75642a;
+  --clr-eco-text: #fde68a;
+}
+
 [data-subject='biology'] {
   --subject-primary: #047857;
   --subject-primary-light: #059669;
@@ -58,44 +76,3 @@ html[data-theme='dark'] {
   --clr-eco-text: #854d0e;
 }
 
-@keyframes slideUpFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes drawLine {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-html.theme-transitioning,
-html.theme-transitioning * {
-  transition:
-    color 420ms ease,
-    background-color 420ms ease,
-    border-color 420ms ease,
-    box-shadow 420ms ease,
-    fill 420ms ease,
-    stroke 420ms ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-}

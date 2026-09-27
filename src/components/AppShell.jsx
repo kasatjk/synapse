@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { getRouteMeta } from '../data/works.js';
 
 export default function AppShell() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const meta = getRouteMeta(pathname);
   const [theme, setTheme] = useState(() => {
     const savedTheme = window.localStorage.getItem('synapse-theme');
@@ -23,6 +23,22 @@ export default function AppShell() {
     document.documentElement.style.colorScheme = theme;
     window.localStorage.setItem('synapse-theme', theme);
   }, [theme]);
+
+  useLayoutEffect(() => {
+    if (hash) {
+      let targetId;
+      try {
+        targetId = decodeURIComponent(hash.slice(1));
+      } catch {
+        return;
+      }
+      const target = document.getElementById(targetId) ?? document.getElementsByName(targetId)[0];
+      target?.scrollIntoView();
+      return;
+    }
+
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   useEffect(() => {
     setMenuOpen(false);

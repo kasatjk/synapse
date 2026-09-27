@@ -40,9 +40,11 @@
   transition: transform 0.3s ease;
 }
 
-.geo-feature-list li:hover {
-  transform: translateX(5px);
-  background: var(--clr-row-alt);
+@media (hover: hover) and (pointer: fine) {
+  .geo-feature-list li:hover {
+    transform: translateX(5px);
+    background: var(--clr-row-alt);
+  }
 }
 
 .geo-feature-list strong {
@@ -82,19 +84,10 @@
   transition: transform 0.4s var(--easing-spring);
 }
 
-.geo-card-centers:hover,
-.geo-card-gdp:hover {
-  transform: translateY(-4px);
-}
-
-.geo-card-centers li,
-.geo-card-gdp li{
-  color: #000;
-}
-
 .geo-card-centers {
   background-color: var(--clr-info-bg);
   border: 1px solid var(--clr-info-border);
+  color: var(--clr-info-text);
 }
 
 .geo-card-centers h3 {
@@ -107,6 +100,7 @@
 .geo-card-gdp {
   background-color: var(--clr-eco-bg);
   border: 1px solid var(--clr-eco-border);
+  color: var(--clr-eco-text);
 }
 
 .geo-card-gdp h3 {
@@ -121,7 +115,7 @@
   padding-left: 1.15rem;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--clr-text-main);
+  color: inherit;
 }
 
 .geo-analytics-grid li + li {
@@ -129,7 +123,14 @@
 }
 
 .geo-analytics-grid strong {
-  color: var(--subject-primary);
+  color: inherit;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .geo-card-centers:hover,
+  .geo-card-gdp:hover {
+    transform: translateY(-4px);
+  }
 }
 
 .geo-stagger-1 {

@@ -58,9 +58,11 @@
   background-color: var(--clr-row-alt);
 }
 
-.bt-table tbody tr:hover {
-  background-color: var(--clr-row-alt);
-  transition: background-color 0.3s ease;
+@media (hover: hover) and (pointer: fine) {
+  .bt-table tbody tr:hover {
+    background-color: var(--clr-row-alt);
+    transition: background-color 0.3s ease;
+  }
 }
 
 @media (min-width: 768px) {
@@ -92,8 +94,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   }
 
-  .bt-table tbody tr:nth-child(even),
-  .bt-table tbody tr:hover {
+  .bt-table tbody tr:nth-child(even) {
     background-color: var(--clr-surface);
   }
 
