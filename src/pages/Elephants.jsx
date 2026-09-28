@@ -1,5 +1,5 @@
-import '../styles/BTElephants.css';
-import ReportHero from '../components/ReportHero.jsx';
+import '../styles/Elephants.css';
+import WorkShell from '../components/WorkShell.jsx';
 import elephant from '../assets/BTElephants/elephant.avif';
 
 const rows = [
@@ -58,10 +58,10 @@ function CellList({ items }) {
   );
 }
 
-export default function BTElephants() {
+export default function Elephants() {
   return (
     <article className="report-card">
-      <ReportHero
+      <WorkShell
         title="Слони"
         subtitle="Порівняння слона саванного та індійського"
         backgroundImage={elephant}

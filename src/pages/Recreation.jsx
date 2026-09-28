@@ -1,6 +1,6 @@
-import '../styles/GGRecrResources.css';
-import ReportHero from '../components/ReportHero.jsx';
-import SummaryBlock from '../components/SummaryBlock.jsx';
+import '../styles/Recreation.css';
+import WorkShell from '../components/WorkShell.jsx';
+import Summary from '../components/Summary.jsx';
 import header from '../assets/GGRecrResources/header.avif';
 import beach from '../assets/GGRecrResources/beach.jpg';
 import skiing from '../assets/GGRecrResources/skiing.jpg';
@@ -48,10 +48,10 @@ const resourcesData = [
   },
 ];
 
-export default function GGRecrResources() {
+export default function Recreation() {
   return (
     <article className="report-card">
-      <ReportHero
+      <WorkShell
         title="Рекреаційні ресурси"
         subtitle="Третинний сектор економіки Європи"
         backgroundImage={header}
@@ -71,11 +71,11 @@ export default function GGRecrResources() {
           ))}
         </div>
 
-        <SummaryBlock title="Підсумок">
+        <Summary title="Підсумок">
           <p>
             Рекреаційні ресурси відіграють надважливу роль в економіці Європи, зокрема у третинному секторі. Усі надані приклади сприяють розвитку місцевої економіки, прибуткам та утворенню робочих місць.
           </p>
-        </SummaryBlock>
+        </Summary>
       </div>
     </article>
   );

@@ -1,7 +1,7 @@
 import { getSubject, getWorksBySubject } from '../data/works.js';
 import WorkCard from './WorkCard.jsx';
 
-export default function SubjectHub({ subjectId }) {
+export default function Subject({ subjectId }) {
   const subject = getSubject(subjectId);
   const subjectWorks = getWorksBySubject(subjectId);
 

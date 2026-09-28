@@ -1,6 +1,6 @@
 import '../styles/Scrapie.css';
-import ReportHero from '../components/ReportHero.jsx';
-import SummaryBlock from '../components/SummaryBlock.jsx';
+import WorkShell from '../components/WorkShell.jsx';
+import Summary from '../components/Summary.jsx';
 import sheep from '../assets/Scrapie/sheep.jpg';
 
 const mechanisms = [
@@ -30,7 +30,7 @@ const prevention = [
 export default function Scrapie() {
   return (
     <article className="report-card">
-      <ReportHero
+      <WorkShell
         title="Скрепі"
         subtitle="Пріонне захворювання овець і кіз"
         backgroundImage={sheep}
@@ -47,49 +47,49 @@ export default function Scrapie() {
         </section>
 
         <div className="scrapie-grid">
-          <SummaryBlock title="Механізм розвитку">
+          <Summary title="Механізм розвитку">
             <ul className="scrapie-list">
               {mechanisms.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </SummaryBlock>
+          </Summary>
 
-          <SummaryBlock title="Клінічні ознаки">
+          <Summary title="Клінічні ознаки">
             <ul className="scrapie-list">
               {symptoms.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </SummaryBlock>
+          </Summary>
         </div>
 
         <div className="scrapie-grid">
-          <SummaryBlock title="Шляхи передавання">
+          <Summary title="Шляхи передавання">
             <ul className="scrapie-list">
               {transmission.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </SummaryBlock>
+          </Summary>
 
-          <SummaryBlock title="Профілактика і контроль">
+          <Summary title="Профілактика і контроль">
             <ul className="scrapie-list">
               {prevention.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </SummaryBlock>
+          </Summary>
         </div>
 
-        <SummaryBlock title="Підсумок">
+        <Summary title="Підсумок">
           <p>
             Scrapie є важливим прикладом пріонного захворювання, що демонструє, як зміна
             структури білка може спричинити руйнування нервової системи. Для сільського
             господарства важливо вчасно виявляти хворих тварин і застосовувати профілактичні
             заходи, щоб обмежити поширення інфекції в стаді.
           </p>
-        </SummaryBlock>
+        </Summary>
       </div>
     </article>
   );

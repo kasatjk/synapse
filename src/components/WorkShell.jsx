@@ -1,4 +1,4 @@
-export default function ReportHero({
+export default function WorkShell({
   title,
   subtitle,
   meta,

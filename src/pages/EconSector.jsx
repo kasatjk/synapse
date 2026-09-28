@@ -1,11 +1,11 @@
-import '../styles/GGEconSector.css';
-import ReportHero from '../components/ReportHero.jsx';
+import '../styles/EconSector.css';
+import WorkShell from '../components/WorkShell.jsx';
 import oil_refinery from '../assets/GGEconSector/oil-refinery.jpg';
 
-export default function GGEconSector() {
+export default function EconSector() {
   return (
     <article className="report-card">
-      <ReportHero
+      <WorkShell
         title="Вторинний сектор економіки"
         backgroundImage={oil_refinery}
         meta={[

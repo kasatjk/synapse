@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import AppShell from './components/AppShell.jsx';
 import HomePage from './pages/HomePage.jsx';
-import BiologyHub from './pages/BiologyHub.jsx';
-import GeographyHub from './pages/GeographyHub.jsx';
-import BLSpecies from './pages/BLSpecies.jsx';
-import BTElephants from './pages/BTElephants.jsx';
+import Biology from './pages/Biology.jsx';
+import Geography from './pages/Geography.jsx';
+import Species from './pages/Species.jsx';
+import Elephants from './pages/Elephants.jsx';
 import Scrapie from './pages/Scrapie.jsx';
-import GGEconSector from './pages/GGEconSector.jsx';
-import GGRecrResources from './pages/GGRecrResources.jsx';
+import EconSector from './pages/EconSector.jsx';
+import Recreation from './pages/Recreation.jsx';
 import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
@@ -15,13 +15,13 @@ export default function App() {
     <Routes>
       <Route element={<AppShell />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/biology" element={<BiologyHub />} />
-        <Route path="/biology/species" element={<BLSpecies />} />
-        <Route path="/biology/elephants" element={<BTElephants />} />
+        <Route path="/biology" element={<Biology />} />
+        <Route path="/biology/species" element={<Species />} />
+        <Route path="/biology/elephants" element={<Elephants />} />
         <Route path="/biology/scrapie" element={<Scrapie />} />
-        <Route path="/geography" element={<GeographyHub />} />
-        <Route path="/geography/secondary-sector" element={<GGEconSector />} />
-        <Route path="/geography/recreation" element={<GGRecrResources />} />
+        <Route path="/geography" element={<Geography />} />
+        <Route path="/geography/secondary-sector" element={<EconSector />} />
+        <Route path="/geography/recreation" element={<Recreation />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

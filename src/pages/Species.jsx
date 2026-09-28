@@ -1,6 +1,6 @@
-import '../styles/BLSpecies.css';
-import ReportHero from '../components/ReportHero.jsx';
-import SummaryBlock from '../components/SummaryBlock.jsx';
+import '../styles/Species.css';
+import WorkShell from '../components/WorkShell.jsx';
+import Summary from '../components/Summary.jsx';
 import homosapiens0 from '../assets/BLSpecies/homo-sapiens-0.jpg';
 import homosapiens1 from '../assets/BLSpecies/homo-sapiens-1.jpg';
 import homosapiens2 from '../assets/BLSpecies/homo-sapiens-2.jpg';
@@ -17,10 +17,10 @@ const specimens = [
   { src: homosapiens5, alt: 'Людина розумна, зразок 6' },
 ];
 
-export default function BLSpecies() {
+export default function Species() {
   return (
     <article className="report-card">
-      <ReportHero
+      <WorkShell
         title="Лабораторна робота 1"
         meta={[
           {
@@ -78,11 +78,11 @@ export default function BLSpecies() {
           </div>
         </div>
 
-        <SummaryBlock title="Підсумок роботи">
+        <Summary title="Підсумок роботи">
           <p>
             Людина розумна - подібна до споріднених видів, але має унікальні ознаки, найбільше пов'язані з вищим розвитком ЦНС, максимальною відсутністю шерсті, здатністю до абстрактного мислення та планування...
           </p>
-        </SummaryBlock>
+        </Summary>
       </div>
     </article>
   );
