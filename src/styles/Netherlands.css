@@ -1,0 +1,329 @@
+.netherlands-page {
+  --netherlands-accent: #ff4f00;
+
+  max-width: 60rem;
+  margin: 0 auto;
+  animation: slideUpFade 0.5s var(--easing-smooth) forwards;
+}
+
+.netherlands-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 2.05;
+  min-height: 16rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  background: #111827;
+  color: #f8fafc;
+}
+
+.netherlands-gallery-image,
+.netherlands-gallery-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.netherlands-gallery-image {
+  display: block;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.netherlands-gallery-image--loaded {
+  opacity: 1;
+}
+
+.netherlands-gallery-shade {
+  background: linear-gradient(0deg, rgb(7 12 22 / 88%), transparent 62%);
+  pointer-events: none;
+}
+
+.netherlands-gallery-caption {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.15rem;
+  left: 1.5rem;
+  z-index: 1;
+}
+
+.netherlands-gallery-caption p {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.15rem, 3vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.netherlands-gallery-caption small {
+  color: #d1d5db;
+  font-size: 0.75rem;
+}
+
+.netherlands-gallery-caption a {
+  color: inherit;
+  text-underline-offset: 0.15em;
+}
+
+.netherlands-gallery-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.netherlands-gallery-arrow,
+.netherlands-gallery-dot {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 38%);
+  background: rgb(15 23 42 / 68%);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.netherlands-gallery-arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+}
+
+.netherlands-gallery-arrow svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.netherlands-gallery-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.35rem;
+}
+
+.netherlands-gallery-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.netherlands-gallery-dot[aria-current='true'] {
+  border-color: var(--netherlands-accent);
+  background: var(--netherlands-accent);
+}
+
+.netherlands-gallery-count {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.1rem;
+  z-index: 1;
+  margin: 0;
+  color: #e5e7eb;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.netherlands-hero {
+  padding: clamp(1.5rem, 5vw, 3rem) 0 0;
+}
+
+.netherlands-eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--netherlands-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.netherlands-hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.netherlands-intro {
+  max-width: 45rem;
+  margin: 1rem 0 0;
+  color: var(--clr-text-muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.netherlands-facts {
+  margin-top: clamp(2rem, 6vw, 3rem);
+}
+
+.netherlands-section-heading {
+  margin-bottom: 1.15rem;
+}
+
+.netherlands-section-heading .netherlands-eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.netherlands-section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.04em;
+}
+
+.netherlands-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.netherlands-metric {
+  position: relative;
+  display: flex;
+  min-height: 13rem;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.25rem;
+  border: 1px solid #374151;
+  border-top: 3px solid var(--netherlands-accent);
+  border-radius: var(--radius-md);
+  background: #111827;
+  color: #f8fafc;
+  box-shadow: 0 12px 26px -18px rgb(0 0 0 / 55%);
+  transition: transform 0.4s var(--easing-spring);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .netherlands-metric:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.netherlands-metric-index {
+  align-self: flex-end;
+  color: #9ca3af;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.netherlands-metric-label {
+  margin: 0.75rem 0 0.4rem;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.netherlands-metric-value {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+.netherlands-metric-value span {
+  color: var(--netherlands-accent);
+  font-size: 0.72em;
+  letter-spacing: -0.02em;
+}
+
+.netherlands-metric-detail {
+  margin: auto 0 0;
+  padding-top: 0.85rem;
+  color: #aab7c7;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.netherlands-metric--name .netherlands-metric-value,
+.netherlands-metric--government .netherlands-metric-value {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  letter-spacing: -0.025em;
+}
+
+.netherlands-gallery-arrow:focus-visible,
+.netherlands-gallery-dot:focus-visible {
+  outline-color: var(--netherlands-accent);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .netherlands-gallery-arrow:hover {
+    border-color: var(--netherlands-accent);
+    background: var(--netherlands-accent);
+    transform: scale(1.05);
+  }
+
+  .netherlands-gallery-dot:not([aria-current='true']):hover {
+    border-color: var(--netherlands-accent);
+  }
+}
+
+@media (max-width: 900px) {
+  .netherlands-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .netherlands-gallery {
+    aspect-ratio: 1.25;
+    min-height: 15rem;
+  }
+
+  .netherlands-gallery-caption {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    padding-right: 3.5rem;
+  }
+
+  .netherlands-gallery-controls {
+    top: 0.65rem;
+    right: 0.65rem;
+    gap: 0.2rem;
+  }
+
+  .netherlands-gallery-arrow {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .netherlands-gallery-dots {
+    gap: 0.25rem;
+  }
+
+  .netherlands-gallery-count {
+    right: 1rem;
+    bottom: 1.05rem;
+  }
+
+  .netherlands-gallery-caption small {
+    display: block;
+    max-width: 17rem;
+  }
+
+  .netherlands-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .netherlands-metric {
+    min-height: 11rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .netherlands-gallery-image {
+    transition: none;
+  }
+}

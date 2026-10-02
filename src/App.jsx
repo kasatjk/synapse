@@ -8,6 +8,7 @@ import Elephants from './pages/Elephants.jsx';
 import Scrapie from './pages/Scrapie.jsx';
 import EconSector from './pages/EconSector.jsx';
 import Recreation from './pages/Recreation.jsx';
+import Netherlands from './pages/Netherlands.jsx';
 import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/geography" element={<Geography />} />
         <Route path="/geography/secondary-sector" element={<EconSector />} />
         <Route path="/geography/recreation" element={<Recreation />} />
+        <Route path="/geography/netherlands" element={<Netherlands />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -70,6 +70,16 @@ export const works = [
     description: 'Рекреаційні ресурси третинного сектора економіки Європи.',
     documentTitle: 'Рекреаційні ресурси | Географія | Синапс',
   },
+  {
+    id: 'netherlands',
+    subject: 'geography',
+    slug: 'netherlands',
+    path: '/geography/netherlands',
+    title: 'Нідерланди',
+    shortTitle: 'Нідерланди',
+    description: 'Характеристика Нідерландів в рамках проєкту "Країни Європи".',
+    documentTitle: 'Нідерланди | Географія | Синапс',
+  }
 ];
 
 export const homeMeta = {

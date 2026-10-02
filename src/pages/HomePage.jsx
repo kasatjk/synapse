@@ -1,7 +1,6 @@
 import WorkCard from '../components/WorkCard.jsx';
 import { subjects, works } from '../data/works.js';
 import { Link } from 'react-router-dom';
-import elephantImage from '../assets/BTElephants/elephant.avif';
 
 export default function HomePage() {
   return (
@@ -15,6 +14,18 @@ export default function HomePage() {
         </div>
       </header>
 
+      <section className="home-section">
+        <h2>НОВИНКА!</h2>
+            <Link
+              key={works[5].id}
+              className="work-card"
+              to={works[5].path}
+              data-subject={works[5].subject}
+            >
+              <h3>{works[5].title}</h3>
+              <p>{works[5].description}</p>
+            </Link>
+      </section>
       <section className="home-section">
         <h2>Предмети</h2>
         <div className="work-grid">
