@@ -50,6 +50,11 @@ html[data-theme='dark'] [data-subject='geography'] {
   --clr-eco-text: #fde68a;
 }
 
+html[data-theme='dark'] [data-subject='ukrainian-language'] {
+  --subject-accent: #fde047;
+  --subject-accent-light: #fef08a;
+}
+
 [data-subject='biology'] {
   --subject-primary: #047857;
   --subject-primary-light: #059669;
@@ -76,3 +81,9 @@ html[data-theme='dark'] [data-subject='geography'] {
   --clr-eco-text: #854d0e;
 }
 
+[data-subject='ukrainian-language'] {
+  --subject-primary: #a67c00;
+  --subject-primary-light: #bf9b30;
+  --subject-accent: #eab308;
+  --subject-accent-light: #fef08a;
+}

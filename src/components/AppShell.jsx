@@ -99,6 +99,7 @@ export default function AppShell() {
               <NavLink to="/" end onClick={() => setMenuOpen(false)}>Головна</NavLink>
               <NavLink to="/biology" onClick={() => setMenuOpen(false)}>Біологія</NavLink>
               <NavLink to="/geography" onClick={() => setMenuOpen(false)}>Географія</NavLink>
+              <NavLink to="/ukrainian-language" onClick={() => setMenuOpen(false)}>Українська мова</NavLink>
             </nav>
             <button
               className="theme-toggle"

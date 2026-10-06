@@ -4,7 +4,7 @@ export const subjects = [
     slug: 'biology',
     path: '/biology',
     title: 'Біологія',
-    description: '"Біологія - це наука про складні речі, які виглядають так, ніби вони були розроблені для певної мети" --- Чарльз Докінз',
+    description: '"Біологія - це наука про складні речі, які виглядають так, ніби вони були створені для певної мети" --- Чарльз Докінз',
     documentTitle: 'Біологія | Синапс',
   },
   {
@@ -12,9 +12,17 @@ export const subjects = [
     slug: 'geography',
     path: '/geography',
     title: 'Географія',
-    description: '"Географія - це наука про те, де що знаходиться, чому воно там знаходиться і чому це має значення" --- Чарльз Гродські',
+    description: '"Карти - це найвеличніші поеми, написані лініями та кольорами." --- Ґілберт Гросвенор',
     documentTitle: 'Географія | Синапс',
   },
+  {
+    id: 'ukrainian-language',
+    slug: 'ukrainian-language',
+    path: '/ukrainian-language',
+    title: 'Українська мова',
+    description: '"Яке прекрасне рідне слово! Воно - не світ, а всі світи." --- Володимир Сосюра',
+    documentTitle: 'Українська мова | Синапс',
+  }
 ];
 
 export const works = [
@@ -79,6 +87,16 @@ export const works = [
     shortTitle: 'Нідерланди',
     description: 'Характеристика Нідерландів в рамках проєкту "Країни Європи".',
     documentTitle: 'Нідерланди | Географія | Синапс',
+  },
+  {
+    id: 'songs',
+    subject: 'ukrainian-language',
+    slug: 'songs',
+    path: '/ukrainian-language/songs',
+    title: 'Пісні',
+    shortTitle: 'Пісні',
+    description: 'Аналіз звукового складу народних пісень.',
+    documentTitle: 'Пісні | Українська мова | Синапс',
   }
 ];
 

@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import AppShell from './components/AppShell.jsx';
+import Subject from './components/Subject.jsx';
 import HomePage from './pages/HomePage.jsx';
 import Biology from './pages/Biology.jsx';
 import Geography from './pages/Geography.jsx';
@@ -9,6 +10,7 @@ import Scrapie from './pages/Scrapie.jsx';
 import EconSector from './pages/EconSector.jsx';
 import Recreation from './pages/Recreation.jsx';
 import Netherlands from './pages/Netherlands.jsx';
+import Songs from './pages/Songs.jsx';
 import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
@@ -24,6 +26,11 @@ export default function App() {
         <Route path="/geography/secondary-sector" element={<EconSector />} />
         <Route path="/geography/recreation" element={<Recreation />} />
         <Route path="/geography/netherlands" element={<Netherlands />} />
+        <Route
+          path="/ukrainian-language"
+          element={<Subject subjectId="ukrainian-language" />}
+        />
+        <Route path="/ukrainian-language/songs" element={<Songs />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
