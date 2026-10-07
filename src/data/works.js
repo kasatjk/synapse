@@ -69,6 +69,16 @@ export const works = [
     documentTitle: 'Вторинний сектор | Географія | Синапс',
   },
   {
+    id: 'europe',
+    subject: 'geography',
+    slug: 'europe',
+    path: '/geography/europe/',
+    title: 'Європа',
+    shortTitle: 'Європа',
+    description: 'Загальна характеристика Європи.',
+    documentTitle: 'Європа | Географія | Синапс',
+  },
+  {
     id: 'recreation',
     subject: 'geography',
     slug: 'recreation',
@@ -110,6 +120,10 @@ export const notFoundMeta = {
   subject: null,
 };
 
+function normalizePath(pathname) {
+  return pathname === '/' ? pathname : pathname.replace(/\/+$/, '');
+}
+
 export function getSubject(id) {
   return subjects.find((item) => item.id === id);
 }
@@ -123,12 +137,13 @@ export function getRouteMeta(pathname) {
     return { ...homeMeta };
   }
 
-  const subject = subjects.find((item) => item.path === pathname);
+  const normalizedPath = normalizePath(pathname);
+  const subject = subjects.find((item) => normalizePath(item.path) === normalizedPath);
   if (subject) {
     return { title: subject.documentTitle, subject: subject.id };
   }
 
-  const work = works.find((item) => item.path === pathname);
+  const work = works.find((item) => normalizePath(item.path) === normalizedPath);
   if (work) {
     return { title: work.documentTitle, subject: work.subject };
   }

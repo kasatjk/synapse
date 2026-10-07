@@ -1,0 +1,151 @@
+.europe-page {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.europe-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.europe-image-placeholder {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-row-alt);
+  text-align: center;
+}
+
+.europe-image-placeholder-visual {
+  display: grid;
+  min-height: 13rem;
+  aspect-ratio: 2.4;
+  place-items: center;
+  padding: 1rem;
+  background:
+    linear-gradient(135deg, transparent 49.8%, rgb(100 116 139 / 12%) 50%, transparent 50.2%),
+    linear-gradient(45deg, transparent 49.8%, rgb(100 116 139 / 12%) 50%, transparent 50.2%),
+    var(--clr-row-alt);
+  color: var(--clr-text-muted);
+  font-weight: 700;
+}
+
+.europe-image-placeholder figcaption {
+  padding: 0.6rem 1rem;
+  border-top: 1px solid var(--clr-border);
+  color: var(--clr-text-muted);
+  font-size: 0.8rem;
+}
+
+.europe-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.europe-panel {
+  padding: 1.25rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+  box-shadow: 0 8px 20px -16px rgb(15 23 42 / 35%);
+}
+
+.europe-panel h2 {
+  margin: 0 0 1rem;
+  color: var(--subject-primary);
+  font-size: 1.15rem;
+}
+
+.europe-legend-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.europe-legend-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--clr-text-main);
+}
+
+.europe-legend-swatch {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 1.15rem;
+  border: 1px solid rgb(15 23 42 / 18%);
+  border-radius: 0.2rem;
+}
+
+.europe-legend-swatch--1 {
+  background: #dbeafe;
+}
+
+.europe-legend-swatch--2 {
+  background: #93c5fd;
+}
+
+.europe-legend-swatch--3 {
+  background: #3b82f6;
+}
+
+.europe-legend-swatch--4 {
+  background: #1e3a8a;
+}
+
+.europe-statistics {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+}
+
+.europe-statistic {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--clr-border);
+}
+
+.europe-statistic dt {
+  color: var(--clr-text-muted);
+}
+
+.europe-statistic dd {
+  margin: 0;
+  color: var(--subject-primary);
+  font-weight: 800;
+  text-align: right;
+}
+
+.europe-page .summary-block {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .europe-body {
+    gap: 2rem;
+  }
+
+  .europe-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .europe-panel {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .europe-image-placeholder-visual {
+    min-height: 11rem;
+    aspect-ratio: 1.5;
+  }
+}

@@ -23,6 +23,9 @@ export default function Songs() {
   const mostUsedVowels = analysis.mostUsedVowels
     .map((vowel) => `«${vowel.letter}» (${formatPercentage(vowel.percentage)})`)
     .join(', ');
+  const mostUsedConsonants = analysis.mostUsedConsonants
+    .map((consonant) => `«${consonant.letter}» (${formatPercentage(consonant.percentage)})`)
+    .join(', ');
   const allSongsExpanded = songs.every((song) => expandedSongs.includes(song.id));
 
   useEffect(() => {
@@ -128,23 +131,44 @@ export default function Songs() {
             {analysis.vowelCount === 0 ? (
               <p className="songs-empty-state">Додайте тексти пісень у файлі даних, щоб побачити частотність.</p>
             ) : (
-              <ul className="vowel-frequency-list">
-                {analysis.vowels.map((vowel) => (
+              <ul className="letter-frequency-list">
+                {analysis.vowels.slice(0, 6).map((vowel) => (
                   <li key={vowel.letter}>
-                    <span className="vowel-letter">{vowel.letter}</span>
+                    <span className="frequency-letter">{vowel.letter}</span>
                     <progress
                       max="100"
                       value={vowel.percentage}
                       aria-label={`Голосна ${vowel.letter}: ${formatPercentage(vowel.percentage)}`}
                     />
-                    <span className="vowel-share">{formatPercentage(vowel.percentage)}</span>
+                    <span className="frequency-share">{formatPercentage(vowel.percentage)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+          <br />
+          <section className="consonant-frequency" aria-labelledby="consonant-frequency-heading">
+            <h3 id="consonant-frequency-heading">Частотність приголосних</h3>
+            {analysis.consonantCount === 0 ? (
+              <p className="songs-empty-state">Додайте тексти пісень у файлі даних, щоб побачити частотність.</p>
+            ) : (
+              <ul className="letter-frequency-list">
+                {analysis.consonants.slice(0, 6).map((consonant) => (
+                  <li key={consonant.letter}>
+                    <span className="frequency-letter">{consonant.letter}</span>
+                    <progress
+                      max="100"
+                      value={consonant.percentage}
+                      aria-label={`Приголосна ${consonant.letter}: ${formatPercentage(consonant.percentage)}`}
+                    />
+                    <span className="frequency-share">{formatPercentage(consonant.percentage)}</span>
                   </li>
                 ))}
               </ul>
             )}
             <p className="songs-method-note">
               Враховано лише українські голосні й приголосні літери; пробіли, пунктуація та ь не враховуються.
-              Частка кожної голосної обчислюється від усіх голосних.
+              Частка голосної обчислюється від усіх голосних, а приголосної — від усіх приголосних.
             </p>
           </section>
         </section>
@@ -153,7 +177,7 @@ export default function Songs() {
           <p>
             {analysis.totalLetters === 0
               ? 'Після додавання текстів тут автоматично з’явиться висновок про співвідношення голосних і приголосних.'
-              : `У текстах пісень голосні становлять ${formatPercentage(analysis.vowelPercentage)}, а приголосні — ${formatPercentage(analysis.consonantPercentage)}. Найчастіше вжито голосні: ${mostUsedVowels}.`}
+              : `У текстах пісень голосні становлять ${formatPercentage(analysis.vowelPercentage)}, а приголосні — ${formatPercentage(analysis.consonantPercentage)}. Найчастіше вжито голосні: ${mostUsedVowels}. Найчастіше вживані приголосні: ${mostUsedConsonants}.`}
           </p>
         </Summary>
       </div>

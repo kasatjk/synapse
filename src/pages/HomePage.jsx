@@ -17,13 +17,13 @@ export default function HomePage() {
       <section className="home-section">
         <h2>НОВИНКА!</h2>
             <Link
-              key={works[5].id}
+              key={works[6].id}
               className="work-card"
-              to={works[5].path}
-              data-subject={works[5].subject}
+              to={works[6].path}
+              data-subject={works[6].subject}
             >
-              <h3>{works[5].title}</h3>
-              <p>{works[5].description}</p>
+              <h3>{works[6].title}</h3>
+              <p>{works[6].description}</p>
             </Link>
       </section>
       <section className="home-section">
