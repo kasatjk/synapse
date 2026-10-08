@@ -1,4 +1,3 @@
-import '../styles/Scrapie.css';
 import WorkShell from '../components/WorkShell.jsx';
 import Summary from '../components/Summary.jsx';
 import sheep from '../assets/Scrapie/sheep.jpg';

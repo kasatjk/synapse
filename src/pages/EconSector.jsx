@@ -1,4 +1,3 @@
-import '../styles/EconSector.css';
 import WorkShell from '../components/WorkShell.jsx';
 import oil_refinery from '../assets/GGEconSector/oil-refinery.jpg';
 

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import amsterdam from '../assets/Netherlands/amsterdam.jpg';
 import tulips from '../assets/Netherlands/tulips.jpg';
 import rotterdamPort from '../assets/Netherlands/rotterdam-port.jpg';
-import '../styles/Netherlands.css';
 
 const photos = [
   {

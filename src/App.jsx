@@ -24,7 +24,7 @@ export default function App() {
         <Route path="/biology/elephants" element={<Elephants />} />
         <Route path="/biology/scrapie" element={<Scrapie />} />
         <Route path="/geography" element={<Geography />} />
-        <Route path="/geography/europe/" element={<Europe />} />
+        <Route path="/geography/europe" element={<Europe />} />
         <Route path="/geography/secondary-sector" element={<EconSector />} />
         <Route path="/geography/recreation" element={<Recreation />} />
         <Route path="/geography/netherlands" element={<Netherlands />} />

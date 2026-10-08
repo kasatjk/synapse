@@ -1,4 +1,3 @@
-import '../styles/Recreation.css';
 import WorkShell from '../components/WorkShell.jsx';
 import Summary from '../components/Summary.jsx';
 import header from '../assets/GGRecrResources/header.avif';

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import '../styles/Songs.css';
 import Summary from '../components/Summary.jsx';
 import WorkShell from '../components/WorkShell.jsx';
 import { songs } from '../data/songs.js';

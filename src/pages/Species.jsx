@@ -1,4 +1,3 @@
-import '../styles/Species.css';
 import WorkShell from '../components/WorkShell.jsx';
 import Summary from '../components/Summary.jsx';
 import homosapiens0 from '../assets/BLSpecies/homo-sapiens-0.jpg';

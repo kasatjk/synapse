@@ -1,4 +1,3 @@
-import '../styles/Elephants.css';
 import WorkShell from '../components/WorkShell.jsx';
 import elephant from '../assets/BTElephants/elephant.avif';
 

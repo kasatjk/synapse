@@ -72,7 +72,7 @@ export const works = [
     id: 'europe',
     subject: 'geography',
     slug: 'europe',
-    path: '/geography/europe/',
+    path: '/geography/europe',
     title: 'Європа',
     shortTitle: 'Європа',
     description: 'Загальна характеристика Європи.',
@@ -113,6 +113,7 @@ export const works = [
 export const homeMeta = {
   title: 'Синапс | Портал робіт',
   subject: null,
+  featuredWorkId: 'netherlands',
 };
 
 export const notFoundMeta = {
@@ -130,6 +131,10 @@ export function getSubject(id) {
 
 export function getWorksBySubject(subjectId) {
   return works.filter((work) => work.subject === subjectId);
+}
+
+export function getWorkById(workId) {
+  return works.find((work) => work.id === workId);
 }
 
 export function getRouteMeta(pathname) {

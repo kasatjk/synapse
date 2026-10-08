@@ -1,8 +1,10 @@
-import WorkCard from '../components/WorkCard.jsx';
-import { subjects, works } from '../data/works.js';
 import { Link } from 'react-router-dom';
+import WorkCard from '../components/WorkCard.jsx';
+import { homeMeta, subjects, getWorkById } from '../data/works.js';
 
 export default function HomePage() {
+  const featuredWork = getWorkById(homeMeta.featuredWorkId);
+
   return (
     <div className="home-page">
       <header className="home-hero">
@@ -16,16 +18,9 @@ export default function HomePage() {
 
       <section className="home-section">
         <h2>НОВИНКА!</h2>
-            <Link
-              key={works[6].id}
-              className="work-card"
-              to={works[6].path}
-              data-subject={works[6].subject}
-            >
-              <h3>{works[6].title}</h3>
-              <p>{works[6].description}</p>
-            </Link>
+        {featuredWork ? <WorkCard work={featuredWork} headingLevel="h3" /> : null}
       </section>
+
       <section className="home-section">
         <h2>Предмети</h2>
         <div className="work-grid">

@@ -41,10 +41,6 @@ export default function AppShell() {
   }, [pathname, hash]);
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     if (!menuOpen) return undefined;
 
     function closeOnEscape(event) {

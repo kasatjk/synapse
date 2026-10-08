@@ -1,4 +1,3 @@
-import '../styles/Europe.css';
 import Summary from '../components/Summary.jsx';
 import WorkShell from '../components/WorkShell.jsx';
 import map from '../assets/Europe/map.png';
