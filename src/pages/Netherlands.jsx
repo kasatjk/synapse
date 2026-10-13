@@ -2,6 +2,7 @@ import { useState } from 'react';
 import amsterdam from '../assets/Netherlands/amsterdam.jpg';
 import tulips from '../assets/Netherlands/tulips.jpg';
 import rotterdamPort from '../assets/Netherlands/rotterdam-port.jpg';
+import kinderdijk from '../assets/Netherlands/kinderdijk.jpg';
 
 const photos = [
   {
@@ -10,7 +11,7 @@ const photos = [
     caption: 'Амстердам',
   },
   {
-    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/KinderdijkMolens02.jpg/1280px-KinderdijkMolens02.jpg',
+    src: kinderdijk,
     alt: 'Вітряки Кіндердейка на тлі відкритого ландшафту',
     caption: 'Вітряки Кіндердейка',
   },
@@ -29,15 +30,24 @@ const photos = [
 const metrics = [
   {
     label: 'Офіційна назва',
-    value: 'Koninkrijk der Nederlanden',
-    detail: 'Королівство Нідерланди',
-    className: 'netherlands-metric--name',
+    value: 'Nederland',
+    detail: 'Нідерланди',
   },
   {
-    label: 'Площа',
-    value: '41,543',
-    unit: 'км²',
-    detail: '17% території відвойовано у моря',
+    label: 'Столиця',
+    value: 'Амстердам',
+    detail: 'Уряд розташований у місті Гаага.',
+  },
+  {
+    label: 'Офіційна мова',
+    value: 'Нідерландська',
+    detail: 'Також поширені фризька, німецька та англійська мови.',
+  },
+  {
+    label: 'Валюта',
+    value: 'Євро',
+    unit: 'EUR',
+    detail: 'Запроваджено у 2002 році, замінивши нідерландський гульден.',
   },
   {
     label: 'Населення',
@@ -46,11 +56,21 @@ const metrics = [
     detail: 'Щільність: близько 424 осіб/км²',
   },
   {
-    label: 'Форма правління',
-    value: 'Конституційна монархія',
-    detail: 'Король - глава держави. Прем’єр-міністр - глава уряду.',
-    className: 'netherlands-metric--government',
+    label: 'Площа',
+    value: '41,543',
+    unit: 'км²',
+    detail: '17% території відвойовано у моря',
   },
+  {
+    label: 'Форма правління',
+    value: 'Унітарна парламентська конституційна монархія',
+    detail: 'Король - глава держави. Прем’єр-міністр - глава уряду.',
+  },
+  {
+    label: 'Тип країни',
+    value: 'Розвинена, пост-індустріальна',
+    detail: 'Високий рівень життя, розвинена економіка та третинний сектор економіки.',
+  }
 ];
 
 export default function Netherlands() {
