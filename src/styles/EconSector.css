@@ -8,7 +8,7 @@
   font-size: 1.4rem;
   font-weight: 800;
   margin: 0 0 1.25rem 0;
-  color: var(--subject-primary);
+  color: var(--subject-heading);
   border-bottom: 3px solid var(--subject-primary-light);
   padding-bottom: 0.5rem;
   display: inline-block;
@@ -48,7 +48,7 @@
 }
 
 .geo-feature-list strong {
-  color: var(--subject-primary);
+  color: var(--subject-heading);
   display: block;
   margin-bottom: 0.25rem;
   font-size: 1.05rem;

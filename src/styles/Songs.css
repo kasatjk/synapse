@@ -8,7 +8,7 @@
   padding-bottom: 0.5rem;
   display: inline-block;
   border-bottom: 3px solid var(--subject-accent-light);
-  color: var(--subject-primary);
+  color: var(--subject-heading);
   font-size: 1.35rem;
   font-weight: 800;
 }
@@ -44,7 +44,7 @@
 .vowel-frequency h3,
 .consonant-frequency h3 {
   margin: 0 0 0.5rem;
-  color: var(--subject-primary);
+  color: var(--subject-heading);
 }
 
 .song-text-heading {

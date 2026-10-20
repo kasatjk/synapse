@@ -2,7 +2,7 @@
   font-size: 1.5rem;
   font-weight: 800;
   margin: 0 0 1.5rem 0;
-  color: var(--subject-primary);
+  color: var(--subject-heading);
   border-bottom: 3px solid var(--subject-accent-light);
   padding-bottom: 0.5rem;
   display: inline-block;
@@ -98,7 +98,7 @@
 
 .lab-taxonomy h4 {
   font-weight: 800;
-  color: var(--subject-primary);
+  color: var(--subject-heading);
   margin: 0 0 0.75rem 0;
 }
 

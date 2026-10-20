@@ -11,6 +11,7 @@ import Scrapie from './pages/Scrapie.jsx';
 import EconSector from './pages/EconSector.jsx';
 import Recreation from './pages/Recreation.jsx';
 import Netherlands from './pages/Netherlands.jsx';
+import EuropeanStatesComparison from './pages/EuropeanStatesComparison.jsx';
 import Songs from './pages/Songs.jsx';
 import NotFound from './pages/NotFound.jsx';
 
@@ -28,6 +29,10 @@ export default function App() {
         <Route path="/geography/secondary-sector" element={<EconSector />} />
         <Route path="/geography/recreation" element={<Recreation />} />
         <Route path="/geography/netherlands" element={<Netherlands />} />
+        <Route
+          path="/geography/european-states-comparison"
+          element={<EuropeanStatesComparison />}
+        />
         <Route
           path="/ukrainian-language"
           element={<Subject subjectId="ukrainian-language" />}

@@ -18,6 +18,7 @@
 
   --subject-primary: #0f172a;
   --subject-primary-light: #334155;
+  --subject-heading: #475569;
   --subject-accent: #64748b;
   --subject-accent-light: #cbd5e1;
 }
@@ -33,6 +34,7 @@ html[data-theme='dark'] {
 }
 
 html[data-theme='dark'] [data-subject='biology'] {
+  --subject-heading: #34d399;
   --clr-success-bg: #12352b;
   --clr-success-border: #2c6b56;
   --clr-success-text: #a7f3d0;
@@ -42,6 +44,7 @@ html[data-theme='dark'] [data-subject='biology'] {
 }
 
 html[data-theme='dark'] [data-subject='geography'] {
+  --subject-heading: #60a5fa;
   --clr-info-bg: #172f4c;
   --clr-info-border: #315b85;
   --clr-info-text: #bfdbfe;
@@ -51,6 +54,7 @@ html[data-theme='dark'] [data-subject='geography'] {
 }
 
 html[data-theme='dark'] [data-subject='ukrainian-language'] {
+  --subject-heading: #facc15;
   --subject-accent: #fde047;
   --subject-accent-light: #fef08a;
 }
@@ -58,6 +62,7 @@ html[data-theme='dark'] [data-subject='ukrainian-language'] {
 [data-subject='biology'] {
   --subject-primary: #047857;
   --subject-primary-light: #059669;
+  --subject-heading: #059669;
   --subject-accent: #10b981;
   --subject-accent-light: #a7f3d0;
   --clr-success-bg: #ecfdf5;
@@ -71,6 +76,7 @@ html[data-theme='dark'] [data-subject='ukrainian-language'] {
 [data-subject='geography'] {
   --subject-primary: #1e3a8a;
   --subject-primary-light: #3b82f6;
+  --subject-heading: #2563eb;
   --subject-accent: #f59e0b;
   --subject-accent-light: #fde68a;
   --clr-info-bg: #eff6ff;
@@ -84,6 +90,7 @@ html[data-theme='dark'] [data-subject='ukrainian-language'] {
 [data-subject='ukrainian-language'] {
   --subject-primary: #a67c00;
   --subject-primary-light: #bf9b30;
+  --subject-heading: #a98500;
   --subject-accent: #eab308;
   --subject-accent-light: #fef08a;
 }

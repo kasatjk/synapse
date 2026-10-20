@@ -212,7 +212,7 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--subject-primary);
+  color: var(--subject-heading);
   margin: 0 0 0.4rem;
 }
 
@@ -247,7 +247,7 @@
   margin: 0 0 0.5rem;
   font-size: 2rem;
   letter-spacing: -0.03em;
-  color: var(--subject-primary);
+  color: var(--subject-heading);
 }
 
 .subject-hub-header p {
@@ -274,7 +274,7 @@
 
 .home-eyebrow {
   margin: 0 0 0.75rem;
-  color: var(--subject-primary);
+  color: var(--subject-heading);
   font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;

@@ -39,7 +39,7 @@
 }
 
 .bt-td-title {
-  color: var(--subject-primary);
+  color: var(--subject-heading);
   font-weight: 700;
   font-size: 1.05rem;
   text-align: left;

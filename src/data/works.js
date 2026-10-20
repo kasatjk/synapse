@@ -68,7 +68,7 @@ export const works = [
       'Галузі промисловості, що перетворюють сировину первинного сектора на готові товари.',
     documentTitle: 'Вторинний сектор | Географія | Синапс',
   },
-  {
+  /*{
     id: 'europe',
     subject: 'geography',
     slug: 'europe',
@@ -77,7 +77,7 @@ export const works = [
     shortTitle: 'Європа',
     description: 'Загальна характеристика Європи.',
     documentTitle: 'Європа | Географія | Синапс',
-  },
+  },*/
   {
     id: 'recreation',
     subject: 'geography',
@@ -97,6 +97,17 @@ export const works = [
     shortTitle: 'Нідерланди',
     description: 'Характеристика Нідерландів в рамках проєкту "Країни Європи".',
     documentTitle: 'Нідерланди | Географія | Синапс',
+  },
+  {
+    id: 'european-states-comparison',
+    subject: 'geography',
+    slug: 'european-states-comparison',
+    path: '/geography/european-states-comparison',
+    title: 'Практична робота',
+    shortTitle: 'Порівняння держав Європи',
+    description:
+      'Порівняльна характеристика двох держав Європи за планом практичної роботи.',
+    documentTitle: 'Порівняння держав Європи | Географія | Синапс',
   },
   {
     id: 'songs',
