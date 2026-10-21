@@ -18,7 +18,7 @@ const statistics = [
 export default function Europe() {
   return (
     <article className="report-card europe-page" data-subject="geography">
-      <WorkShell title={`Практична робота "Європа"`} />
+      <WorkShell title="Практична робота" subtitle="Характеристика регіону на карті" />
 
       <div className="report-body europe-body">
         <figure className="europe-feature-image">

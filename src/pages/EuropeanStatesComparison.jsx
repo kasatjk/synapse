@@ -148,8 +148,8 @@ export default function EuropeanStatesComparison() {
   return (
     <article className="report-card states-comparison-page" data-subject="geography">
       <WorkShell
-        title="ПОРІВНЯЛЬНА ХАРАКТЕРИСТИКА ДВОХ ДЕРЖАВ"
-        subtitle="План практичної роботи"
+        title="Практична робота"
+        subtitle="Порівняльна характеристика двох держав Європи"
       />
 
       <div className="report-body states-comparison-body">
