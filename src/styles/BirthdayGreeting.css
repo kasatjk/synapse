@@ -1,0 +1,126 @@
+.birthday-greeting {
+  position: relative;
+  display: grid;
+  min-height: 3.25rem;
+  place-items: center;
+  overflow: hidden;
+  padding: 0.65rem 3.5rem;
+  border-bottom: 1px solid var(--clr-border);
+  background:
+    linear-gradient(110deg, rgba(251, 191, 36, 0.12), transparent 32%),
+    linear-gradient(250deg, rgba(236, 72, 153, 0.12), transparent 32%),
+    var(--clr-surface);
+  color: var(--clr-text-main);
+  text-align: center;
+}
+
+.birthday-greeting__message {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.birthday-greeting__message strong {
+  color: #c026d3;
+  font-weight: 800;
+}
+
+.birthday-greeting__decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.birthday-greeting__decoration {
+  position: absolute;
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+.birthday-greeting__decoration--1 {
+  top: 22%;
+  left: 8%;
+}
+
+.birthday-greeting__decoration--2 {
+  top: 58%;
+  left: 18%;
+}
+
+.birthday-greeting__decoration--3 {
+  top: 36%;
+  left: 28%;
+  width: 0.45rem;
+  height: 0.45rem;
+}
+
+.birthday-greeting__decoration--4 {
+  top: 48%;
+  right: 28%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.birthday-greeting__decoration--5 {
+  top: 20%;
+  right: 18%;
+}
+
+.birthday-greeting__decoration--6 {
+  top: 58%;
+  right: 8%;
+  width: 0.55rem;
+  height: 0.55rem;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.diamond {
+  transform: rotate(45deg);
+  border-radius: 0.1rem;
+}
+
+.circle--coral {
+  background-color: #fb7185;
+}
+
+.diamond--yellow {
+  background-color: #fbbf24;
+}
+
+.circle--blue {
+  background-color: #60a5fa;
+}
+
+.diamond--pink {
+  background-color: #f472b6;
+}
+
+.circle--green {
+  background-color: #34d399;
+}
+
+.diamond--purple {
+  background-color: #a78bfa;
+}
+
+@media (max-width: 480px) {
+  .birthday-greeting {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .birthday-greeting__message {
+    font-size: 0.82rem;
+  }
+
+  .birthday-greeting__decoration--3,
+  .birthday-greeting__decoration--4 {
+    display: none;
+  }
+}

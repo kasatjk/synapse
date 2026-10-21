@@ -1,0 +1,182 @@
+.birthday-celebration {
+  position: fixed;
+  z-index: 19;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.birthday-celebration__heart,
+.birthday-celebration__firework,
+.birthday-celebration__spark,
+.birthday-celebration__wish {
+  position: absolute;
+  display: block;
+  margin: 0;
+  animation: birthday-float 9s ease-in-out infinite;
+}
+
+.birthday-celebration__heart {
+  width: clamp(3.5rem, 7vw, 6.5rem);
+  filter: drop-shadow(0 0.35rem 0.75rem rgba(190, 24, 93, 0.2));
+}
+
+.birthday-celebration__heart path {
+  fill: #fb7185;
+}
+
+.birthday-celebration__heart--one {
+  top: 18%;
+  left: 3%;
+  transform: rotate(-14deg);
+}
+
+.birthday-celebration__heart--two {
+  right: 3%;
+  bottom: 15%;
+  width: clamp(3rem, 6vw, 5.5rem);
+  animation-delay: -4s;
+  transform: rotate(12deg);
+}
+
+.birthday-celebration__heart--two path {
+  fill: #f472b6;
+}
+
+.birthday-celebration__firework {
+  width: clamp(3rem, 5vw, 4.5rem);
+  overflow: visible;
+  animation-name: birthday-twinkle;
+  animation-duration: 5s;
+}
+
+.birthday-celebration__firework path {
+  fill: none;
+  stroke: #f59e0b;
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+.birthday-celebration__firework circle {
+  fill: #fbbf24;
+}
+
+.birthday-celebration__firework--one {
+  top: 28%;
+  right: 9%;
+}
+
+.birthday-celebration__firework--two {
+  bottom: 29%;
+  left: 10%;
+  animation-delay: -2.5s;
+}
+
+.birthday-celebration__firework--two path {
+  stroke: #a78bfa;
+}
+
+.birthday-celebration__firework--two circle {
+  fill: #c084fc;
+}
+
+.birthday-celebration__spark {
+  color: #34d399;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  animation-name: birthday-twinkle;
+  animation-duration: 4s;
+}
+
+.birthday-celebration__spark--one {
+  top: 47%;
+  left: 7%;
+}
+
+.birthday-celebration__spark--two {
+  top: 55%;
+  right: 7%;
+  color: #60a5fa;
+  animation-delay: -1.5s;
+}
+
+.birthday-celebration__wish {
+  max-width: 13rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--clr-surface) 88%, #fbcfe8);
+  box-shadow: 0 0.5rem 1.5rem rgba(15, 23, 42, 0.1);
+  color: #a21caf;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+  animation-duration: 10s;
+}
+
+.birthday-celebration__wish--one {
+  top: 70%;
+  left: 1%;
+  transform: rotate(-5deg);
+}
+
+.birthday-celebration__wish--two {
+  top: 39%;
+  right: 1%;
+  color: #047857;
+  border-color: rgba(52, 211, 153, 0.35);
+  background: color-mix(in srgb, var(--clr-surface) 88%, #d1fae5);
+  animation-delay: -5s;
+  transform: rotate(5deg);
+}
+
+@keyframes birthday-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -0.65rem;
+  }
+}
+
+@keyframes birthday-twinkle {
+  0%,
+  100% {
+    opacity: 0.65;
+    scale: 0.88;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1.08;
+  }
+}
+
+@media (max-width: 767px) {
+  .birthday-celebration__wish,
+  .birthday-celebration__firework--two {
+    display: none;
+  }
+
+  .birthday-celebration__heart--one {
+    top: 17%;
+    left: 1%;
+  }
+
+  .birthday-celebration__heart--two {
+    right: 1%;
+    bottom: 12%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .birthday-celebration__heart,
+  .birthday-celebration__firework,
+  .birthday-celebration__spark,
+  .birthday-celebration__wish {
+    animation: none;
+  }
+}

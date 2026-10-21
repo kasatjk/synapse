@@ -1,6 +1,13 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import BirthdayCelebration from './BirthdayCelebration.jsx';
+import BirthdayGreeting from './BirthdayGreeting.jsx';
+import BirthdayIntro from './BirthdayIntro.jsx';
 import { getRouteMeta } from '../data/works.js';
+
+const SHOW_BIRTHDAY_GREETING = true;
+const SHOW_BIRTHDAY_DECORATIONS = true;
+const SHOW_BIRTHDAY_INTRO = true;
 
 export default function AppShell() {
   const { pathname, hash } = useLocation();
@@ -66,6 +73,9 @@ export default function AppShell() {
 
   return (
     <div className="app-shell" data-subject={meta.subject || undefined}>
+      {SHOW_BIRTHDAY_GREETING && <BirthdayGreeting />}
+      {SHOW_BIRTHDAY_DECORATIONS && <BirthdayCelebration />}
+      {SHOW_BIRTHDAY_INTRO && pathname === '/' && <BirthdayIntro />}
       <header className="app-header">
         <div className="app-header-inner">
           <NavLink to="/" className="app-logo" end>
