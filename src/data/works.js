@@ -68,7 +68,7 @@ export const works = [
       'Галузі промисловості, що перетворюють сировину первинного сектора на готові товари.',
     documentTitle: 'Вторинний сектор | Географія | Синапс',
   },
-  /*{
+  {
     id: 'europe',
     subject: 'geography',
     slug: 'europe',
@@ -77,7 +77,7 @@ export const works = [
     shortTitle: 'Європа',
     description: 'Загальна характеристика Європи.',
     documentTitle: 'Європа | Географія | Синапс',
-  },*/
+  },
   {
     id: 'recreation',
     subject: 'geography',

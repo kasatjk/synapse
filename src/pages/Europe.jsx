@@ -3,10 +3,9 @@ import WorkShell from '../components/WorkShell.jsx';
 import map from '../assets/Europe/map.png';
 
 const legendItems = [
-  'Позначення 1 — додати опис',
-  'Позначення 2 — додати опис',
-  'Позначення 3 — додати опис',
-  'Позначення 4 — додати опис',
+  'Держави-карлики',
+  'Ісландія — найнижча густота населення',
+  'Монако — найвища густота населення',
 ];
 
 const statistics = [
@@ -19,18 +18,14 @@ const statistics = [
 export default function Europe() {
   return (
     <article className="report-card europe-page" data-subject="geography">
-      <WorkShell title="Європа" />
+      <WorkShell title={`Практична робота "Європа"`} />
 
       <div className="report-body europe-body">
-        <figure className="europe-image-placeholder">
-          <div
-            className="europe-image-placeholder-visual"
-            role="img"
-            aria-label="Місце для широкого зображення Європи"
-          >
+        <figure className="europe-feature-image">
+          <div className="europe-feature-image-visual">
             <img src={map} alt="Мапа Європи" />
           </div>
-          <figcaption>Зображення буде додано</figcaption>
+          <figcaption>Основне зображення: карта Європи</figcaption>
         </figure>
 
         <div className="europe-overview">
@@ -63,7 +58,7 @@ export default function Europe() {
         </div>
 
         <Summary title="Висновок">
-          <p>Місце для висновку. Додайте перевірену інформацію.</p>
+          <p>Європа - дуже різноманітний регіон з диференційованими географічними та культурними характеристиками, також густиною населення та державами-карликами.</p>
         </Summary>
       </div>
     </article>
