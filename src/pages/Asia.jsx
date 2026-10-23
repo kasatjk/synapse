@@ -1,12 +1,11 @@
-import Summary from '../components/Summary.jsx';
-import WorkShell from '../components/WorkShell.jsx';
+import RegionMapOverview from '../components/RegionMapOverview.jsx';
 import map from '../assets/Asia/map.png';
 
 const legendItems = [
-  'Монголія - найнижча густота населення',
-  'Макао - найвища густота населення',
-  'Бруней - найменше населення',
-  'Індія - найбільше населення',
+  { label: 'Монголія - найнижча густота населення', color: '#ffc90e' },
+  { label: 'Макао - найвища густота населення', color: '#22b14c' },
+  { label: 'Бруней - найменше населення', color: '#00a2e8' },
+  { label: 'Індія - найбільше населення', color: '#3f48cc' },
 ];
 
 const statistics = [
@@ -16,50 +15,20 @@ const statistics = [
   { label: 'Найнижча густота', value: 'Монголія' },
 ];
 
+const summaryText =
+  'Азія є найбільшим континентом за площею і населенням. Завдяки надзвичайному різноманіттю кліматичних умов і природних ресурсів, населення та умови в різних регіонах сильно відрізняються. Наприклад, Монголія має найнижчу густоту населення, тоді як Макао - найвищу. Індія та Бруней відповідають за найбільше та найменше населення відповідно. Це спричинено тим, що Монголія - холодний степ без ресурсів, а Бруней - мала острівна держава. Індія має різноманітні умови, сприятливі для життя. Макао - дуже мала та урбанізована держава, що зумовлює її рекордну густоту населення.';
+
 export default function Asia() {
   return (
-    <article className="report-card asia-page" data-subject="geography">
-      <WorkShell title="Практична робота" subtitle="Населення Азії на карті" />
-
-      <div className="report-body asia-body">
-        <figure className="asia-feature-image">
-            <img src={map} alt="Мапа Азії" />
-          <figcaption>Карта Азії</figcaption>
-        </figure>
-
-        <div className="asia-overview">
-          <section className="asia-panel" aria-labelledby="asia-legend-title">
-            <h2 id="asia-legend-title">Легенда карти</h2>
-            <ul className="asia-legend-list">
-              {legendItems.map((item, index) => (
-                <li key={item}>
-                  <span
-                    className={`asia-legend-swatch asia-legend-swatch--${index + 1}`}
-                    aria-hidden="true"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="asia-panel" aria-labelledby="asia-statistics-title">
-            <h2 id="asia-statistics-title">Коротко про регіон</h2>
-            <dl className="asia-statistics">
-              {statistics.map(({ label, value }) => (
-                <div className="asia-statistic" key={label}>
-                  <dt>{label}</dt>
-                  <dd>{value}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-        </div>
-
-        <Summary title="Висновок">
-          <p>Азія є найбільшим континентом за площею і населенням. Завдяки надзвичайному різноманіттю кліматичних умов і природних ресурсів, населення та умови в різних регіонах сильно відрізняються. Наприклад, Монголія має найнижчу густоту населення, тоді як Макао - найвищу. Індія та Бруней відповідають за найбільше та найменше населення відповідно. Це спричинено тим, що Монголія - холодний степ без ресурсів, а Бруней - мала островна держава. Індія має різноманітні умови, приємні для життя. Макао - дуже мала та урбанізована держава, що збільшує її густоту населення.</p>
-        </Summary>
-      </div>
-    </article>
+    <RegionMapOverview
+      title="Практична робота"
+      subtitle="Населення Азії на карті"
+      mapSrc={map}
+      mapAlt="Картографічна схема щільності населення Азії"
+      mapCaption="Карта щільності населення Азії"
+      legendItems={legendItems}
+      statistics={statistics}
+      summaryText={summaryText}
+    />
   );
 }

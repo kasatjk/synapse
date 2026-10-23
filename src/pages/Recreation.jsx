@@ -1,81 +1,93 @@
 import WorkShell from '../components/WorkShell.jsx';
 import Summary from '../components/Summary.jsx';
 import header from '../assets/GGRecrResources/header.avif';
-import beach from '../assets/GGRecrResources/beach.jpg';
-import skiing from '../assets/GGRecrResources/skiing.jpg';
-import balneotherapy from '../assets/GGRecrResources/balneotherapy.jpg';
-import cathedral from '../assets/GGRecrResources/cathedral.jpg';
-import nationalPark from '../assets/GGRecrResources/national-park.jpg';
-import geyser from '../assets/GGRecrResources/geyser.jpg';
+import '../styles/Recreation.css';
+import beach from '../assets/GGRecrResources/beach.webp';
+import skiing from '../assets/GGRecrResources/skiing.webp';
+import balneotherapy from '../assets/GGRecrResources/balneotherapy.webp';
+import cathedral from '../assets/GGRecrResources/cathedral.webp';
+import nationalPark from '../assets/GGRecrResources/national-park.webp';
+import geyser from '../assets/GGRecrResources/geyser.webp';
 
 const resourcesData = [
   {
     id: 1,
-    title: 'Пляжні',
-    desc: 'Середземноморські узбережжя південної Європи. Приносить прибуток від готельного та ресторанного бізнесу.',
+    title: 'Пляжні ресурси',
+    desc: 'Середземноморські узбережжя Південної Європи (Французька Рив’єра, узбережжя Іспанії, Італії та Греції). Формують високий прибуток від готельного, яхтового та ресторанного бізнесу.',
     img: beach,
+    alt: 'Курортне середземноморське узбережжя Європи',
   },
   {
     id: 2,
-    title: 'Гірськолижні',
-    desc: 'Альпи та Карпати - популярні напрямки для зимових видів спорту. Норвезькі фіорди - ідеальні для круїзів та подорожей.',
+    title: 'Гірськолижні центри',
+    desc: 'Альпи, Піренеї та Карпати — провідні світові локації зимових видів спорту. Норвезькі фіорди поєднують гірський туризм із круїзними маршрутами.',
     img: skiing,
+    alt: 'Гірськолижні траси та засніжені вершини Альп',
   },
   {
     id: 3,
-    title: 'Бальнеологічні',
-    desc: "Джерела мінеральних вод, як у м.Карлові Вари та лікувальні грязі широко використовуються для оздоровлення.",
+    title: 'Бальнеологічні курорти',
+    desc: 'Термальні та мінеральні води, лікувальні грязі (Карлові Вари, Віші, Баден-Баден). Основа оздоровчого медичного туризму регіону.',
     img: balneotherapy,
+    alt: 'Термальні бальнеологічні джерела та спа-комплекс',
   },
   {
     id: 4,
-    title: 'Історико-культурні',
-    desc: "Пам'ятки архітектури, старовинні замки та музеї, основна цінність Європейської історії та культури.",
+    title: 'Історико-культурні пам’ятки',
+    desc: 'Архітектурні ансамблі, середньовічні замки, собори та музеї світового значення. Головний магніт екскурсійного пізнавального туризму.',
     img: cathedral,
+    alt: 'Історичний готичний собор та європейська архітектурна спадщина',
   },
   {
     id: 5,
-    title: 'Лісові та нац.парки',
-    desc: 'Масиви лісів і національні парки для екотуризму та кемпінгу. Також збереження біорізноманіття та природних ландшафтів.',
+    title: 'Національні парки',
+    desc: 'Заповідні лісові масиви, озера та біосферні резервати. Стрімкий розвиток екологічного туризму, кемпінгу та фотосафарі.',
     img: nationalPark,
+    alt: 'Національний природний парк з озером та скелями',
   },
   {
     id: 6,
-    title: 'Інші природні',
-    desc: 'Гейзери, вулкани, льодовики тощо. Вони приваблюють туристів, які цікавляться природними явищами та захоплюються величчю природи.',
+    title: 'Унікальні природні феномени',
+    desc: 'Гейзери та вулкани Ісландії, льодовики Скандинавії, карстові печери. Приваблюють прихильників екстремального та наукового туризму.',
     img: geyser,
+    alt: 'Діючий гейзер та геотермальні ландшафти',
   },
 ];
 
 export default function Recreation() {
   return (
-    <article className="report-card">
-      <WorkShell
-        title="Рекреаційні ресурси"
-        subtitle="Третинний сектор економіки Європи"
-        backgroundImage={header}
-        align="center"
-      />
-
-      <div className="report-body">
-        <div className="gg-grid">
-          {resourcesData.map((res) => (
-            <div className="gg-resource-item" key={res.id}>
-              <img src={res.img} alt={res.title} className="gg-resource-img" />
-              <div className="gg-resource-content">
-                <h2>{res.title}</h2>
-                <p>{res.desc}</p>
-              </div>
+    <WorkShell
+      title="Рекреаційні ресурси"
+      subtitle="Третинний сектор економіки Європи"
+      backgroundImage={header}
+      align="center"
+    >
+      <div className="gg-grid">
+        {resourcesData.map((res) => (
+          <article className="gg-resource-item" key={res.id}>
+            <img
+              src={res.img}
+              alt={res.alt}
+              className="gg-resource-img"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="gg-resource-content">
+              <h2>{res.title}</h2>
+              <p>{res.desc}</p>
             </div>
-          ))}
-        </div>
-
-        <Summary title="Підсумок">
-          <p>
-            Рекреаційні ресурси відіграють надважливу роль в економіці Європи, зокрема у третинному секторі. Усі надані приклади сприяють розвитку місцевої економіки, прибуткам та утворенню робочих місць.
-          </p>
-        </Summary>
+          </article>
+        ))}
       </div>
-    </article>
+
+      <Summary title="Підсумок">
+        <p>
+          Рекреаційні ресурси є фундаментальним драйвером третинного сектора європейської економіки.
+          Туристична індустрія генерує понад 10% ВВП окремих країн півдня Європи, створює мільйони
+          робочих місць, стимулює розвиток транспорту, реставрацію культурної спадщини та збереження
+          природних екосистем.
+        </p>
+      </Summary>
+    </WorkShell>
   );
 }

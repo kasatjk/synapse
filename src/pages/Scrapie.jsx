@@ -1,11 +1,12 @@
 import WorkShell from '../components/WorkShell.jsx';
 import Summary from '../components/Summary.jsx';
-import sheep from '../assets/Scrapie/sheep.jpg';
+import sheep from '../assets/Scrapie/sheep.webp';
+import '../styles/Scrapie.css';
 
 const mechanisms = [
   'Збудником є пріон PrPSc, який змінює нормальну форму клітинного білка PrPC.',
   'Аномальний білок накопичується в нейронах, порушуючи їхню нормальну роботу.',
-  'Ураження нервової системи призводить до прогресуючої дегенерації і загибелі тканин.',
+  'Ураження нервової системи призводить до прогресуючої дегенерації і загибелі клітин мозку.',
 ];
 
 const symptoms = [
@@ -17,79 +18,77 @@ const symptoms = [
 const transmission = [
   'Зараження відбувається через контакт із інфікованими тканинами, шерстю, слиною та навколишнім середовищем.',
   'Ризику піддаються вівці та кози, особливо при спільному утриманні.',
-  'Пріони дуже стійкі до впливу зовнішніх факторів, тому їх складно елімінувати.',
+  'Пріони надзвичайно стійкі до високих температур і дезінфектантів, тому їх складно елімінувати.',
 ];
 
 const prevention = [
-  'Профілактика базується на вибракуванні хворих тварин, контролі стада та санітарних заходах.',
+  'Профілактика базується на вибракуванні хворих тварин, моніторингу стада та санітарних заходах.',
   'Запобігають контакту здорових тварин з інфікованим біоматеріалом.',
-  'Відповідальне ведення господарства знижує ризик поширення захворювання.',
+  'Відповідальне ведення фермерського господарства мінімізує ризик спалахів.',
 ];
 
 export default function Scrapie() {
   return (
-    <article className="report-card">
-      <WorkShell
-        title="Скрепі"
-        subtitle="Пріонне захворювання овець і кіз"
-        backgroundImage={sheep}
-      />
+    <WorkShell
+      title="Скрепі"
+      subtitle="Пріонне захворювання овець і кіз"
+      backgroundImage={sheep}
+      bodyClassName="scrapie-body"
+    >
+      <section className="scrapie-intro">
+        <h2 className="report-section-title">Що таке Скрепі</h2>
+        <p>
+          Скрепі (Scrapie) — це контагіозна нейродегенеративна хвороба овець і кіз, яка невідворотно
+          вражає центральну нервову систему. Вона належить до трансмісивних губчастоподібних
+          енцефалопатій (пріонних патологій). Патогенний пріон позбавлений генетичного матеріалу
+          (ДНК/РНК) і являє собою конформаційно змінену ізоформу нормального мембранного білка.
+        </p>
+      </section>
 
-      <div className="report-body scrapie-body">
-        <section className="scrapie-intro">
-          <h2 className="scrapie-section-title">Що таке Скрепі</h2>
-          <p>
-            Скрепі (Scrapie) — це інфекційне захворювання овець і кіз, яке вражає нервову систему.
-            Воно належить до пріонних хвороб, тому патоген не містить нуклеїнових кислот,
-            а є аномальною формою природного білка, що утворюється в клітинах мозку.
-          </p>
-        </section>
+      <div className="scrapie-grid">
+        <Summary title="Механізм розвитку">
+          <ul className="scrapie-list">
+            {mechanisms.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Summary>
 
-        <div className="scrapie-grid">
-          <Summary title="Механізм розвитку">
-            <ul className="scrapie-list">
-              {mechanisms.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </Summary>
-
-          <Summary title="Клінічні ознаки">
-            <ul className="scrapie-list">
-              {symptoms.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </Summary>
-        </div>
-
-        <div className="scrapie-grid">
-          <Summary title="Шляхи передавання">
-            <ul className="scrapie-list">
-              {transmission.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </Summary>
-
-          <Summary title="Профілактика і контроль">
-            <ul className="scrapie-list">
-              {prevention.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </Summary>
-        </div>
-
-        <Summary title="Підсумок">
-          <p>
-            Scrapie є важливим прикладом пріонного захворювання, що демонструє, як зміна
-            структури білка може спричинити руйнування нервової системи. Для сільського
-            господарства важливо вчасно виявляти хворих тварин і застосовувати профілактичні
-            заходи, щоб обмежити поширення інфекції в стаді.
-          </p>
+        <Summary title="Клінічні ознаки">
+          <ul className="scrapie-list">
+            {symptoms.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </Summary>
       </div>
-    </article>
+
+      <div className="scrapie-grid">
+        <Summary title="Шляхи передавання">
+          <ul className="scrapie-list">
+            {transmission.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Summary>
+
+        <Summary title="Профілактика і контроль">
+          <ul className="scrapie-list">
+            {prevention.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Summary>
+      </div>
+
+      <Summary title="Підсумок">
+        <p>
+          Scrapie є класичним прикладом пріонного захворювання у ветеринарній медицині, що наочно
+          демонструє, як конформаційна зміна структури білкової молекули запускає каскад
+          незворотного руйнування нервової тканини. Своєчасний моніторинг і суворий ветеринарно-санітарний
+          контроль є єдиними дієвими методами запобігання поширенню патології.
+        </p>
+      </Summary>
+    </WorkShell>
   );
 }

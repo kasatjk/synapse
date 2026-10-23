@@ -321,3 +321,15 @@
     transition: none;
   }
 }
+
+@media (max-width: 640px) {
+  .netherlands-metric-detail {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .netherlands-metric {
+    min-height: 9.5rem;
+    padding: 1rem;
+  }
+}

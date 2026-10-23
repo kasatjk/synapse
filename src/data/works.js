@@ -55,7 +55,7 @@ export const works = [
     title: 'Скрепі',
     shortTitle: 'Скрепі',
     description: 'Захворювання, що викликає дегенерацію нервової системи у овець і кіз через пріони.',
-    documentTitle: ' Скрепі | Біологія | Синапс',
+    documentTitle: 'Скрепі | Біологія | Синапс',
   },
   {
     id: 'secondary-sector',
@@ -134,7 +134,7 @@ export const works = [
 export const homeMeta = {
   title: 'Синапс | Портал робіт',
   subject: null,
-  featuredWorkId: 'netherlands',
+  featuredWorkId: 'asia',
 };
 
 export const notFoundMeta = {
@@ -158,21 +158,41 @@ export function getWorkById(workId) {
   return works.find((work) => work.id === workId);
 }
 
+export function getWorkByPath(pathname) {
+  const normalized = normalizePath(pathname);
+  return works.find((item) => normalizePath(item.path) === normalized);
+}
+
 export function getRouteMeta(pathname) {
   if (pathname === '/') {
-    return { ...homeMeta };
+    return {
+      ...homeMeta,
+      description: 'Портал навчальних робіт Данила Павлюка імені Тетяни Каришевої.',
+    };
   }
 
   const normalizedPath = normalizePath(pathname);
   const subject = subjects.find((item) => normalizePath(item.path) === normalizedPath);
   if (subject) {
-    return { title: subject.documentTitle, subject: subject.id };
+    return {
+      title: subject.documentTitle,
+      subject: subject.id,
+      description: subject.description,
+    };
   }
 
   const work = works.find((item) => normalizePath(item.path) === normalizedPath);
   if (work) {
-    return { title: work.documentTitle, subject: work.subject };
+    return {
+      title: work.documentTitle,
+      subject: work.subject,
+      description: work.description,
+    };
   }
 
-  return { ...notFoundMeta };
+  return {
+    ...notFoundMeta,
+    description: 'Запитану сторінку не знайдено на порталі.',
+  };
 }
+

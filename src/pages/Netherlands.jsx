@@ -1,76 +1,79 @@
 import { useState } from 'react';
-import amsterdam from '../assets/Netherlands/amsterdam.jpg';
-import tulips from '../assets/Netherlands/tulips.jpg';
-import rotterdamPort from '../assets/Netherlands/rotterdam-port.jpg';
-import kinderdijk from '../assets/Netherlands/kinderdijk.jpg';
+import WorkShell from '../components/WorkShell.jsx';
+import Summary from '../components/Summary.jsx';
+import amsterdam from '../assets/Netherlands/amsterdam.webp';
+import tulips from '../assets/Netherlands/tulips.webp';
+import rotterdamPort from '../assets/Netherlands/rotterdam-port.webp';
+import kinderdijk from '../assets/Netherlands/kinderdijk.webp';
+import '../styles/Netherlands.css';
 
 const photos = [
   {
     src: amsterdam,
-    alt: 'Кольорові будинки вздовж каналу на вулиці Дамрак в Амстердамі',
-    caption: 'Амстердам',
+    alt: 'Кольорові історичні будинки вздовж каналу на вулиці Дамрак в Амстердамі',
+    caption: 'Амстердам — столиця каналів та культури',
   },
   {
     src: kinderdijk,
-    alt: 'Вітряки Кіндердейка на тлі відкритого ландшафту',
-    caption: 'Вітряки Кіндердейка',
+    alt: 'Історичні вітряки Кіндердейка на тлі польдерного ландшафту',
+    caption: 'Вітряки Кіндердейка (ЮНЕСКО)',
   },
   {
     src: tulips,
-    alt: 'Квітучі тюльпани',
-    caption: 'Тюльпанчики',
+    alt: 'Квітучі поля нідерландських тюльпанів навесні',
+    caption: 'Тюльпанові плантації',
   },
   {
     src: rotterdamPort,
-    alt: 'Порт Роттердаму',
-    caption: 'Порт Роттердаму',
-  }
+    alt: 'Гігантський логістичний порт Роттердама з контейнеровозами',
+    caption: 'Порт Роттердама — морські ворота Європи',
+  },
 ];
 
 const metrics = [
   {
     label: 'Офіційна назва',
     value: 'Nederland',
-    detail: 'Нідерланди',
+    detail: 'Королівство Нідерланди (Koninkrijk der Nederlanden)',
   },
   {
     label: 'Столиця',
     value: 'Амстердам',
-    detail: 'Уряд розташований у місті Гаага.',
+    detail: 'Уряд, парламент та монарша резиденція — у місті Гаага.',
   },
   {
     label: 'Офіційна мова',
     value: 'Нідерландська',
-    detail: 'Також поширені фризька, німецька та англійська мови.',
+    detail: 'Також офіційний статус має західнофризька мова (Фрисландія).',
   },
   {
     label: 'Валюта',
     value: 'Євро',
     unit: 'EUR',
-    detail: 'Запроваджено у 2002 році, замінивши нідерландський гульден.',
+    detail: 'Запроваджено в 2002 році, замінивши нідерландський гульден.',
   },
   {
     label: 'Населення',
     value: '18,5',
     unit: 'млн',
-    detail: 'Щільність: близько 424 осіб/км²',
+    detail: 'Середня густота: понад 424 осіб/км² (найвища в ЄС).',
   },
   {
-    label: 'Площа',
+    label: 'Площа території',
     value: '41,543',
     unit: 'км²',
-    detail: '17% території відвойовано у моря',
+    detail: 'Близько 17% суші відвойовано у Північного моря (польдери).',
   },
   {
     label: 'Форма правління',
-    value: 'Унітарна парламентська конституційна монархія',
-    detail: 'Король - глава держави. Прем’єр-міністр - глава уряду.',
+    value: 'Конституційна монархія',
+    detail: 'Парламентська демократія з розвиненою коаліційною системою.',
   },
   {
-    label: 'Тип країни',
-    value: 'Розвинена, пост-індустріальна',
-    detail: 'Високий рівень життя, розвинена економіка та третинний сектор економіки.',
-  }
+    label: 'Тип економіки',
+    value: 'Постіндустріальна',
+    detail: 'Високотехнологічний агросектор, фінансовий та логістичний хаб світового рівня.',
+  },
 ];
 
 export default function Netherlands() {
@@ -94,7 +97,11 @@ export default function Netherlands() {
   }
 
   return (
-    <article className="netherlands-page">
+    <WorkShell
+      title="Нідерланди"
+      subtitle="Країни Європи (Je Maintiendrai)"
+      className="netherlands-page"
+    >
       <section className="netherlands-gallery" aria-label="Фотографії Нідерландів">
         {previousPhotoIndex !== null && (
           <img
@@ -134,7 +141,7 @@ export default function Netherlands() {
             onClick={() => showPhoto(-1)}
           >
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-              <path d="m15 18-6-6 6-6" />
+              <path d="m15 18-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <div className="netherlands-gallery-dots" aria-label="Вибрати фото">
@@ -156,7 +163,7 @@ export default function Netherlands() {
             onClick={() => showPhoto(1)}
           >
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-              <path d="m9 18 6-6-6-6" />
+              <path d="m9 18 6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
@@ -165,17 +172,10 @@ export default function Netherlands() {
         </p>
       </section>
 
-      <header className="netherlands-hero">
-        <h1>Нідерланди</h1>
-        <p className="netherlands-intro">
-          Je Maintiendrai
-        </p>
-      </header>
-
       <section className="netherlands-facts" aria-labelledby="netherlands-facts-title">
         <div className="netherlands-section-heading">
           <p className="netherlands-eyebrow">Короткі відомості</p>
-          <h2 id="netherlands-facts-title">Візитна картка</h2>
+          <h2 id="netherlands-facts-title" className="report-section-title">Візитна картка держави</h2>
         </div>
 
         <div className="netherlands-metrics">
@@ -195,6 +195,16 @@ export default function Netherlands() {
           ))}
         </div>
       </section>
-    </article>
+
+      <Summary title="Підсумок дослідження">
+        <p>
+          Нідерланди — одна з найбільш густонаселених та високотехнологічних держав Європи.
+          Завдяки унікальній системі дамб та каналів країна відвоювала значні площі в моря.
+          Нідерландська економіка входить у десятку світових експортерів завдяки надпотужному
+          портовому хабу Роттердама, інноваційному тепличному агрокомплексу (друге місце у світі
+          після США за експортом агропродукції) та розвиненому сектору цифрових і фінансових послуг.
+        </p>
+      </Summary>
+    </WorkShell>
   );
 }

@@ -12,8 +12,8 @@
 
 .bt-table-header-row {
   background: linear-gradient(
-    rgba(4, 120, 87, 0.85),
-    rgba(4, 120, 87, 0.95)
+    color-mix(in srgb, var(--subject-primary, #047857) 85%, #0f172a),
+    color-mix(in srgb, var(--subject-primary, #047857) 95%, #0f172a)
   );
   color: #ffffff;
 }
@@ -54,6 +54,18 @@
   margin-top: 0.15rem;
 }
 
+.bt-same-badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  background-color: var(--clr-success-bg, #ecfdf5);
+  border: 1px solid var(--clr-success-border, #a7f3d0);
+  color: var(--clr-success-text, #064e3b);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .bt-table tbody tr:nth-child(even) {
   background-color: var(--clr-row-alt);
 }
@@ -71,7 +83,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .bt-table,
   .bt-table tbody,
   .bt-table tr,
@@ -132,5 +144,21 @@
   .bt-td-title::before {
     color: #ffffff;
     opacity: 0.8;
+  }
+
+  .bt-table tr {
+    margin-bottom: 1rem;
+  }
+
+  .bt-td {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .bt-td::before,
+  .bt-td-title::before {
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
   }
 }

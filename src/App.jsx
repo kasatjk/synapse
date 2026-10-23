@@ -1,45 +1,67 @@
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AppShell from './components/AppShell.jsx';
 import Subject from './components/Subject.jsx';
+import WorkSkeleton from './components/WorkSkeleton.jsx';
+import { subjects, works } from './data/works.js';
 import HomePage from './pages/HomePage.jsx';
-import Biology from './pages/Biology.jsx';
-import Geography from './pages/Geography.jsx';
-import Europe from './pages/Europe.jsx';
-import Asia from './pages/Asia.jsx';
-import Species from './pages/Species.jsx';
-import Elephants from './pages/Elephants.jsx';
-import Scrapie from './pages/Scrapie.jsx';
-import EconSector from './pages/EconSector.jsx';
-import Recreation from './pages/Recreation.jsx';
-import Netherlands from './pages/Netherlands.jsx';
-import EuropeanStatesComparison from './pages/EuropeanStatesComparison.jsx';
-import Songs from './pages/Songs.jsx';
 import NotFound from './pages/NotFound.jsx';
+
+const Species = lazy(() => import('./pages/Species.jsx'));
+const Elephants = lazy(() => import('./pages/Elephants.jsx'));
+const Scrapie = lazy(() => import('./pages/Scrapie.jsx'));
+const Europe = lazy(() => import('./pages/Europe.jsx'));
+const Asia = lazy(() => import('./pages/Asia.jsx'));
+const EconSector = lazy(() => import('./pages/EconSector.jsx'));
+const Recreation = lazy(() => import('./pages/Recreation.jsx'));
+const Netherlands = lazy(() => import('./pages/Netherlands.jsx'));
+const EuropeanStatesComparison = lazy(() => import('./pages/EuropeanStatesComparison.jsx'));
+const Songs = lazy(() => import('./pages/Songs.jsx'));
+
+const workPageComponents = {
+  species: Species,
+  elephants: Elephants,
+  scrapie: Scrapie,
+  europe: Europe,
+  asia: Asia,
+  'secondary-sector': EconSector,
+  recreation: Recreation,
+  netherlands: Netherlands,
+  'european-states-comparison': EuropeanStatesComparison,
+  songs: Songs,
+};
 
 export default function App() {
   return (
     <Routes>
       <Route element={<AppShell />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/biology" element={<Biology />} />
-        <Route path="/biology/species" element={<Species />} />
-        <Route path="/biology/elephants" element={<Elephants />} />
-        <Route path="/biology/scrapie" element={<Scrapie />} />
-        <Route path="/geography" element={<Geography />} />
-        <Route path="/geography/europe" element={<Europe />} />
-        <Route path="/geography/asia" element={<Asia />} />
-        <Route path="/geography/secondary-sector" element={<EconSector />} />
-        <Route path="/geography/recreation" element={<Recreation />} />
-        <Route path="/geography/netherlands" element={<Netherlands />} />
-        <Route
-          path="/geography/european-states-comparison"
-          element={<EuropeanStatesComparison />}
-        />
-        <Route
-          path="/ukrainian-language"
-          element={<Subject subjectId="ukrainian-language" />}
-        />
-        <Route path="/ukrainian-language/songs" element={<Songs />} />
+
+        {subjects.map((subject) => (
+          <Route
+            key={subject.id}
+            path={subject.path}
+            element={<Subject subjectId={subject.id} />}
+          />
+        ))}
+
+        {works.map((work) => {
+          const Component = workPageComponents[work.id];
+          if (!Component) return null;
+
+          return (
+            <Route
+              key={work.path}
+              path={work.path}
+              element={
+                <Suspense fallback={<WorkSkeleton />}>
+                  <Component />
+                </Suspense>
+              }
+            />
+          );
+        })}
+
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

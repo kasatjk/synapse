@@ -1,34 +1,35 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import BirthdayCelebration from './BirthdayCelebration.jsx';
-import BirthdayGreeting from './BirthdayGreeting.jsx';
-import BirthdayIntro from './BirthdayIntro.jsx';
+import ErrorBoundary from './ErrorBoundary.jsx';
 import { getRouteMeta } from '../data/works.js';
-
-const SHOW_BIRTHDAY_GREETING = false;
-const SHOW_BIRTHDAY_DECORATIONS = false;
-const SHOW_BIRTHDAY_INTRO = false;
+import { getStorageItem, setStorageItem } from '../utils/storage.js';
+import { usePageMeta } from '../utils/usePageMeta.js';
 
 export default function AppShell() {
   const { pathname, hash } = useLocation();
   const meta = getRouteMeta(pathname);
   const [theme, setTheme] = useState(() => {
-    const savedTheme = window.localStorage.getItem('synapse-theme');
+    const savedTheme = getStorageItem('synapse-theme');
     if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return 'light';
   });
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef(null);
   const themeTransitionTimer = useRef(0);
 
-  useEffect(() => {
-    document.title = meta.title;
-  }, [meta.title]);
+  usePageMeta({
+    title: meta.title,
+    description: meta.description,
+    pathname,
+  });
 
   useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme;
     document.documentElement.style.colorScheme = theme;
-    window.localStorage.setItem('synapse-theme', theme);
+    setStorageItem('synapse-theme', theme);
   }, [theme]);
 
   useLayoutEffect(() => {
@@ -73,9 +74,6 @@ export default function AppShell() {
 
   return (
     <div className="app-shell" data-subject={meta.subject || undefined}>
-      {SHOW_BIRTHDAY_GREETING && <BirthdayGreeting />}
-      {SHOW_BIRTHDAY_DECORATIONS && <BirthdayCelebration />}
-      {SHOW_BIRTHDAY_INTRO && pathname === '/' && <BirthdayIntro />}
       <header className="app-header">
         <div className="app-header-inner">
           <NavLink to="/" className="app-logo" end>
@@ -131,7 +129,9 @@ export default function AppShell() {
       </header>
 
       <main className="app-main">
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </main>
 
       <footer className="site-footer">

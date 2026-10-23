@@ -1,103 +1,32 @@
-.states-comparison-page {
-  max-width: 64rem;
-  margin: 0 auto;
-}
-
-.states-comparison-page .report-hero-title {
-  max-width: 48rem;
-  font-size: clamp(1.55rem, 4vw, 2.5rem);
-}
-
 .states-comparison-body {
   display: grid;
-  gap: 2rem;
+  gap: 2.25rem;
 }
 
 .states-comparison-section h2 {
-  margin: 0 0 1rem;
+  margin: 0 0 1.25rem;
   color: var(--subject-heading);
   font-size: 1.35rem;
-}
-
-.states-comparison-table {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  align-items: start;
-  gap: 0.75rem;
-}
-
-.states-comparison-table-head {
-  display: contents;
-}
-
-.states-comparison-table-head > span,
-.states-comparison-table-head h3 {
-  margin: 0;
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius-sm);
-  background: var(--clr-row-alt);
-  color: var(--subject-heading);
   font-weight: 800;
 }
 
-.states-comparison-table-head > span {
-  color: var(--clr-text-muted);
-}
-
-.states-comparison-table-head h3,
-.states-comparison-question h3,
-.states-comparison-conclusion-country h3 {
-  margin: 0;
-  color: var(--subject-heading);
-  font-size: 1.05rem;
-}
-
-.states-comparison-row {
-  display: contents;
-  margin: 0;
-}
-
-.states-comparison-row dt,
-.states-comparison-row dd {
-  min-width: 0;
-  margin: 0;
-  padding: 0.9rem 1rem;
-  border-bottom: 1px solid var(--clr-border);
-}
-
-.states-comparison-row dt {
-  color: var(--clr-text-main);
-  font-weight: 700;
-}
-
-.states-comparison-row dd {
-  color: var(--clr-text-muted);
-}
-
-.states-comparison-table--images .states-comparison-image {
-  grid-row: 2;
-}
-
-.states-comparison-table--images .states-comparison-image:nth-of-type(1) {
-  grid-column: 2;
-}
-
-.states-comparison-table--images .states-comparison-image:nth-of-type(2) {
-  grid-column: 3;
+.states-comparison-images-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
 }
 
 .states-comparison-image {
-  min-width: 0;
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-md);
   background: var(--clr-surface);
-  box-shadow: 0 8px 20px -16px rgb(15 23 42 / 35%);
+  box-shadow: 0 8px 20px -16px rgba(15, 23, 42, 0.25);
   text-align: center;
 }
 
-.states-comparison-image > div {
+.states-comparison-image-wrapper {
   overflow: hidden;
   aspect-ratio: 16 / 10;
   background: var(--clr-row-alt);
@@ -109,6 +38,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.4s var(--easing-smooth);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .states-comparison-image:hover img {
+    transform: scale(1.03);
+  }
 }
 
 .states-comparison-image figcaption {
@@ -118,6 +54,68 @@
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.5;
+}
+
+.states-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+}
+
+.states-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.states-comparison-th {
+  background: var(--clr-row-alt);
+  color: var(--subject-heading);
+  font-weight: 800;
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--clr-border);
+  font-size: 1rem;
+  width: 37.5%;
+}
+
+.states-comparison-th--feature {
+  width: 25%;
+  color: var(--clr-text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.states-comparison-table tbody tr {
+  border-bottom: 1px solid var(--clr-border);
+  transition: background-color 150ms ease;
+}
+
+.states-comparison-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.states-comparison-table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+.states-comparison-feature-cell {
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  color: var(--clr-text-main);
+  background: var(--clr-surface);
+  vertical-align: top;
+  border-right: 1px solid var(--clr-border);
+}
+
+.states-comparison-val-cell {
+  padding: 1rem 1.25rem;
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  vertical-align: top;
 }
 
 .states-comparison-questions {
@@ -130,26 +128,21 @@
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-md);
   background: var(--clr-surface);
+  box-shadow: 0 4px 12px -8px rgba(15, 23, 42, 0.15);
 }
 
 .states-comparison-question h3 {
-  margin-bottom: 0.85rem;
-  color: var(--clr-text-main);
+  margin: 0 0 0.65rem;
+  color: var(--subject-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
 }
 
 .states-comparison-question p,
 .states-comparison-conclusion p {
   margin: 0;
   line-height: 1.65;
-}
-
-.states-comparison-placeholder {
-  color: var(--clr-text-muted);
-  font-style: italic;
-}
-
-.states-comparison-page .summary-block {
-  margin-top: 0;
+  color: var(--clr-text-main);
 }
 
 .states-comparison-conclusion {
@@ -159,7 +152,13 @@
 
 .states-comparison-conclusion-country {
   padding-top: 1rem;
-  border-top: 1px solid rgb(226 232 240 / 25%);
+  border-top: 1px solid rgba(226, 232, 240, 0.25);
+}
+
+.states-comparison-conclusion-country h3 {
+  margin: 0 0 0.5rem;
+  color: var(--subject-heading);
+  font-size: 1.1rem;
 }
 
 .states-comparison-conclusion-country p + p {
@@ -167,66 +166,73 @@
 }
 
 @media (min-width: 768px) {
-  .states-comparison-table {
-    grid-template-columns: minmax(10rem, 0.9fr) minmax(0, 1.25fr) minmax(0, 1.25fr);
-    gap: 0 1rem;
+  .states-comparison-images-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 600px) {
-  .states-comparison-table {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.85rem;
+@media (max-width: 640px) {
+  .states-comparison-body {
+    gap: 1.5rem;
   }
 
-  .states-comparison-table-head {
-    display: none;
-  }
-
-  .states-comparison-row {
-    display: grid;
-    gap: 0;
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--clr-border);
-    border-radius: var(--radius-sm);
-    background: var(--clr-surface);
-  }
-
-  .states-comparison-row dt {
-    padding: 0 0 0.65rem;
-    border: 0;
-    color: var(--subject-heading);
-  }
-
-  .states-comparison-row dd {
-    padding: 0.65rem 0 0;
-    border-top: 1px solid var(--clr-border);
-    border-bottom: 0;
-    line-height: 1.55;
-    overflow-wrap: anywhere;
-  }
-
-  .states-comparison-row dd::before {
-    display: block;
-    margin-bottom: 0.2rem;
-    color: var(--clr-text-main);
-    content: attr(data-country);
-    font-size: 0.8rem;
-    font-weight: 800;
-  }
-
-  .states-comparison-table--images .states-comparison-image,
-  .states-comparison-table--images .states-comparison-image:nth-of-type(1),
-  .states-comparison-table--images .states-comparison-image:nth-of-type(2) {
-    grid-row: auto;
-    grid-column: auto;
+  .states-comparison-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.85rem;
   }
 
   .states-comparison-question {
     padding: 1rem;
   }
 
-  .states-comparison-question h3 {
-    line-height: 1.4;
+  .states-comparison-table thead {
+    display: none;
+  }
+
+  .states-comparison-table,
+  .states-comparison-table tbody,
+  .states-comparison-table tr,
+  .states-comparison-table th,
+  .states-comparison-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .states-comparison-table tr {
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .states-comparison-feature-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--clr-border);
+    background: var(--clr-row-alt);
+    color: var(--subject-heading);
+    padding: 0.8rem 0.9rem;
+  }
+
+  .states-comparison-val-cell {
+    border-bottom: 1px solid var(--clr-border);
+    padding: 0.75rem 0.9rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .states-comparison-val-cell:last-child {
+    border-bottom: none;
+  }
+
+  .states-comparison-val-cell::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--subject-heading);
   }
 }
