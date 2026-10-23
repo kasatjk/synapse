@@ -79,6 +79,16 @@ export const works = [
     documentTitle: 'Європа | Географія | Синапс',
   },
   {
+    id: 'asia',
+    subject: 'geography',
+    slug: 'asia',
+    path: '/geography/asia',
+    title: 'Азія',
+    shortTitle: 'Азія',
+    description: 'Загальна характеристика Азії.',
+    documentTitle: 'Азія | Географія | Синапс',
+  },
+  {
     id: 'recreation',
     subject: 'geography',
     slug: 'recreation',

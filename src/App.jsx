@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage.jsx';
 import Biology from './pages/Biology.jsx';
 import Geography from './pages/Geography.jsx';
 import Europe from './pages/Europe.jsx';
+import Asia from './pages/Asia.jsx';
 import Species from './pages/Species.jsx';
 import Elephants from './pages/Elephants.jsx';
 import Scrapie from './pages/Scrapie.jsx';
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/biology/scrapie" element={<Scrapie />} />
         <Route path="/geography" element={<Geography />} />
         <Route path="/geography/europe" element={<Europe />} />
+        <Route path="/geography/asia" element={<Asia />} />
         <Route path="/geography/secondary-sector" element={<EconSector />} />
         <Route path="/geography/recreation" element={<Recreation />} />
         <Route path="/geography/netherlands" element={<Netherlands />} />

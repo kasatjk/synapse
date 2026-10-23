@@ -5,9 +5,9 @@ import BirthdayGreeting from './BirthdayGreeting.jsx';
 import BirthdayIntro from './BirthdayIntro.jsx';
 import { getRouteMeta } from '../data/works.js';
 
-const SHOW_BIRTHDAY_GREETING = true;
-const SHOW_BIRTHDAY_DECORATIONS = true;
-const SHOW_BIRTHDAY_INTRO = true;
+const SHOW_BIRTHDAY_GREETING = false;
+const SHOW_BIRTHDAY_DECORATIONS = false;
+const SHOW_BIRTHDAY_INTRO = false;
 
 export default function AppShell() {
   const { pathname, hash } = useLocation();

@@ -18,14 +18,14 @@ const statistics = [
 export default function Europe() {
   return (
     <article className="report-card europe-page" data-subject="geography">
-      <WorkShell title="Практична робота" subtitle="Характеристика регіону на карті" />
+      <WorkShell title="Практична робота" subtitle="Населення Європи на карті" />
 
       <div className="report-body europe-body">
         <figure className="europe-feature-image">
           <div className="europe-feature-image-visual">
             <img src={map} alt="Мапа Європи" />
           </div>
-          <figcaption>Основне зображення: карта Європи</figcaption>
+          <figcaption>Карта Європи</figcaption>
         </figure>
 
         <div className="europe-overview">

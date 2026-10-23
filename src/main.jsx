@@ -8,6 +8,7 @@ import './styles/layout.css';
 import './styles/components.css';
 import './styles/EconSector.css';
 import './styles/Elephants.css';
+import './styles/Asia.css';
 import './styles/Europe.css';
 import './styles/EuropeanStatesComparison.css';
 import './styles/Netherlands.css';
