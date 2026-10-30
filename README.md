@@ -173,7 +173,7 @@ synapse/
 
 ## Публікація
 
-Портал опублікований на [Vercel](https://vercel.com): [synapse-iris.vercel.app](https://synapse-iris.vercel.app/). Файл `vercel.json` перенаправляє запити сторінок на `index.html`, щоб прямі посилання React Router працювали після оновлення сторінки.
+Портал опублікований на [Vercel](https://vercel.com/home): [synapse-iris.vercel.app](https://synapse-iris.vercel.app/). Файл `vercel.json` перенаправляє запити сторінок на `index.html`, щоб прямі посилання React Router працювали після оновлення сторінки.
 
 ## Авторство
 
