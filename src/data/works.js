@@ -58,6 +58,16 @@ export const works = [
     documentTitle: 'Скрепі | Біологія | Синапс',
   },
   {
+    id: 'mushrooms',
+    subject: 'biology',
+    slug: 'mushrooms',
+    path: '/biology/mushrooms',
+    title: 'Незвичайні гриби',
+    shortTitle: 'Гриби',
+    description: 'Характеристика та таксономічне положення Coprinopsis pulchricaerulea та Mycena chlorophos.',
+    documentTitle: 'Гриби | Біологія | Синапс',
+  },
+  {
     id: 'secondary-sector',
     subject: 'geography',
     slug: 'secondary-sector',

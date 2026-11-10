@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound.jsx';
 const Species = lazy(() => import('./pages/Species.jsx'));
 const Elephants = lazy(() => import('./pages/Elephants.jsx'));
 const Scrapie = lazy(() => import('./pages/Scrapie.jsx'));
+const Mushrooms = lazy(() => import('./pages/Mushrooms.jsx'));
 const Europe = lazy(() => import('./pages/Europe.jsx'));
 const Asia = lazy(() => import('./pages/Asia.jsx'));
 const EconSector = lazy(() => import('./pages/EconSector.jsx'));
@@ -22,6 +23,7 @@ const workPageComponents = {
   species: Species,
   elephants: Elephants,
   scrapie: Scrapie,
+  mushrooms: Mushrooms,
   europe: Europe,
   asia: Asia,
   'secondary-sector': EconSector,

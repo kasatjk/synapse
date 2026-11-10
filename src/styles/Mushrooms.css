@@ -1,0 +1,436 @@
+.mushrooms-page {
+  max-width: 64rem;
+  margin: 0 auto;
+  animation: slideUpFade 0.5s var(--easing-smooth) forwards;
+}
+
+.mushrooms-intro {
+  margin: 0 0 2.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--clr-border);
+  border-left: 4px solid var(--subject-accent);
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+  color: var(--clr-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.mushrooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Individual Mushroom Section */
+.mushroom-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 2rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  background: var(--clr-surface);
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 12%);
+  position: relative;
+  overflow: hidden;
+}
+
+.mushroom-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--mushroom-accent, var(--subject-accent));
+}
+
+/* Section Header */
+.mushroom-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mushroom-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.mushroom-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: color-mix(in srgb, var(--mushroom-accent) 15%, transparent);
+  color: var(--mushroom-accent);
+  border: 1px solid color-mix(in srgb, var(--mushroom-accent) 30%, transparent);
+}
+
+.mushroom-index-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+  font-weight: 600;
+}
+
+.mushroom-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--clr-text-main);
+  line-height: 1.15;
+}
+
+.mushroom-latin {
+  margin: 0;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--mushroom-accent);
+  font-weight: 600;
+}
+
+.mushroom-overview {
+  margin: 0.35rem 0 0;
+  color: var(--clr-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Slideshow Gallery */
+.mushrooms-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 2.1;
+  min-height: 17rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.mushrooms-gallery-image,
+.mushrooms-gallery-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mushrooms-gallery-image {
+  display: block;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.mushrooms-gallery-image--loaded {
+  opacity: 1;
+}
+
+.mushrooms-gallery-shade {
+  background: linear-gradient(0deg, rgb(7 12 22 / 85%) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.mushrooms-gallery-caption {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.15rem;
+  left: 1.5rem;
+  z-index: 1;
+}
+
+.mushrooms-gallery-caption p {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.mushrooms-gallery-caption small {
+  color: #cbd5e1;
+  font-size: 0.75rem;
+}
+
+.mushrooms-gallery-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mushrooms-gallery-arrow,
+.mushrooms-gallery-dot {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 38%);
+  background: rgb(15 23 42 / 68%);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.mushrooms-gallery-arrow {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+}
+
+.mushrooms-gallery-arrow svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.mushrooms-gallery-arrow:hover {
+  border-color: var(--mushroom-accent);
+  background: var(--mushroom-accent);
+  color: #0f172a;
+  transform: scale(1.05);
+}
+
+.mushrooms-gallery-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.35rem;
+}
+
+.mushrooms-gallery-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.mushrooms-gallery-dot[aria-current='true'] {
+  border-color: var(--mushroom-accent);
+  background: var(--mushroom-accent);
+}
+
+.mushrooms-gallery-dot:not([aria-current='true']):hover {
+  border-color: var(--mushroom-accent);
+}
+
+.mushrooms-gallery-count {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.1rem;
+  z-index: 1;
+  margin: 0;
+  color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+/* Taxonomy Section */
+.mushroom-subheading {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mushroom-subheading-icon {
+  color: var(--mushroom-accent);
+}
+
+.mushroom-taxonomy {
+  background: var(--clr-row-alt);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+}
+
+.taxonomy-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.taxonomy-tree-node {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  transition: background-color 150ms ease;
+  font-size: 0.92rem;
+}
+
+.taxonomy-tree-node:hover {
+  background: color-mix(in srgb, var(--mushroom-accent) 10%, transparent);
+}
+
+.taxonomy-tree-node--species {
+  background: color-mix(in srgb, var(--mushroom-accent) 15%, transparent);
+  font-weight: 700;
+  border-left: 3px solid var(--mushroom-accent);
+}
+
+.taxonomy-tree-connector {
+  font-family: var(--font-mono);
+  color: var(--clr-text-muted);
+  user-select: none;
+}
+
+.taxonomy-tree-rank {
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  min-width: 6.5rem;
+  font-size: 0.85rem;
+}
+
+.taxonomy-tree-value {
+  color: var(--clr-text-main);
+  font-weight: 700;
+}
+
+.taxonomy-tree-latin {
+  font-style: italic;
+  color: var(--clr-text-muted);
+  font-size: 0.85rem;
+}
+
+/* Characteristics Grid */
+.mushroom-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.mushroom-metric {
+  position: relative;
+  display: flex;
+  min-height: 12.5rem;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.15rem;
+  border: 1px solid var(--clr-border);
+  border-top: 3px solid var(--mushroom-accent);
+  border-radius: var(--radius-md);
+  background: var(--clr-row-alt);
+  color: var(--clr-text-main);
+  box-shadow: 0 4px 12px -6px rgb(0 0 0 / 8%);
+  transition: transform 0.35s var(--easing-spring), box-shadow 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mushroom-metric:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px -8px rgb(0 0 0 / 16%);
+  }
+}
+
+.mushroom-metric-index {
+  align-self: flex-end;
+  color: var(--clr-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.mushroom-metric-label {
+  margin: 0.5rem 0 0.35rem;
+  color: var(--clr-text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.mushroom-metric-value {
+  margin: 0;
+  color: var(--clr-text-main);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  letter-spacing: -0.015em;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.mushroom-metric-detail {
+  margin: auto 0 0;
+  padding-top: 0.75rem;
+  color: var(--clr-text-muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+/* Responsive Styles */
+@media (max-width: 960px) {
+  .mushroom-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .mushroom-card {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .mushrooms-gallery {
+    aspect-ratio: 1.35;
+    min-height: 15rem;
+  }
+
+  .mushrooms-gallery-caption {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    padding-right: 3.5rem;
+  }
+
+  .mushrooms-gallery-controls {
+    top: 0.65rem;
+    right: 0.65rem;
+  }
+
+  .mushrooms-gallery-arrow {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .mushrooms-gallery-count {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .mushroom-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .taxonomy-tree-node {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .taxonomy-tree-rank {
+    min-width: 5.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mushrooms-gallery-image {
+    transition: none;
+  }
+}
