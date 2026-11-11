@@ -71,15 +71,10 @@
   text-shadow: 0 0 5px rgba(56, 189, 248, 0.3);
 }
 
-.geo-analytics-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
 .geo-card-centers,
 .geo-card-gdp {
   padding: 1.5rem;
+  margin-top: 2rem;
   border-radius: var(--radius-md);
   transition: transform 0.4s var(--easing-spring);
 }
