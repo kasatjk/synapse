@@ -1,159 +1,176 @@
 export const subjects = [
   {
-    id: 'biology',
-    slug: 'biology',
-    path: '/biology',
-    title: 'Біологія',
-    description: '"Біологія - це наука про складні речі, які виглядають так, ніби вони були створені для певної мети." (Чарльз Докінз)',
-    documentTitle: 'Біологія | Синапс',
+    id: "biology",
+    slug: "biology",
+    path: "/biology",
+    title: "Біологія",
+    description:
+      '"Біологія - це наука про складні речі, які виглядають так, ніби вони були створені для певної мети." (Чарльз Докінз)',
+    documentTitle: "Біологія | Синапс",
   },
   {
-    id: 'geography',
-    slug: 'geography',
-    path: '/geography',
-    title: 'Географія',
-    description: '"Карти - це найвеличніші поеми, написані лініями та кольорами." (Ґілберт Гросвенор)',
-    documentTitle: 'Географія | Синапс',
+    id: "geography",
+    slug: "geography",
+    path: "/geography",
+    title: "Географія",
+    description:
+      '"Карти - це найвеличніші поеми, написані лініями та кольорами." (Ґілберт Гросвенор)',
+    documentTitle: "Географія | Синапс",
   },
   {
-    id: 'ukrainian-language',
-    slug: 'ukrainian-language',
-    path: '/ukrainian-language',
-    title: 'Українська мова',
-    description: '"Яке прекрасне рідне слово! Воно - не світ, а всі світи." (Володимир Сосюра)',
-    documentTitle: 'Українська мова | Синапс',
-  }
+    id: "ukrainian-language",
+    slug: "ukrainian-language",
+    path: "/ukrainian-language",
+    title: "Українська мова",
+    description:
+      '"Яке прекрасне рідне слово! Воно - не світ, а всі світи." (Володимир Сосюра)',
+    documentTitle: "Українська мова | Синапс",
+  },
 ];
 
 export const works = [
   {
-    id: 'species',
-    subject: 'biology',
-    slug: 'species',
-    path: '/biology/species',
-    title: 'Лабораторна робота 1',
-    shortTitle: 'Таксономія Homo sapiens',
+    id: "species",
+    subject: "biology",
+    slug: "species",
+    path: "/biology/species",
+    title: "Лабораторна робота 1",
+    shortTitle: "Таксономія Homo sapiens",
     description:
-      'Визначення таксономічного положення виду в системі органічного світу на прикладі людини розумної.',
-    documentTitle: 'Таксономія виду | Біологія | Синапс',
+      "Визначення таксономічного положення виду в системі органічного світу на прикладі людини розумної.",
+    documentTitle: "Таксономія виду | Біологія | Синапс",
   },
   {
-    id: 'elephants',
-    subject: 'biology',
-    slug: 'elephants',
-    path: '/biology/elephants',
-    title: 'Слони',
-    shortTitle: 'Слони',
-    description: 'Порівняння слона саванного та індійського за критеріями виду.',
-    documentTitle: 'Слони | Біологія | Синапс',
-  },
-  {
-    id: 'scrapie',
-    subject: 'biology',
-    slug: 'scrapie',
-    path: '/biology/scrapie',
-    title: 'Скрепі',
-    shortTitle: 'Скрепі',
-    description: 'Захворювання, що викликає дегенерацію нервової системи у овець і кіз через пріони.',
-    documentTitle: 'Скрепі | Біологія | Синапс',
-  },
-  {
-    id: 'mushrooms',
-    subject: 'biology',
-    slug: 'mushrooms',
-    path: '/biology/mushrooms',
-    title: 'Незвичайні гриби',
-    shortTitle: 'Гриби',
-    description: 'Характеристика та таксономічне положення Coprinopsis pulchricaerulea та Mycena chlorophos.',
-    documentTitle: 'Гриби | Біологія | Синапс',
-  },
-  {
-    id: 'secondary-sector',
-    subject: 'geography',
-    slug: 'secondary-sector',
-    path: '/geography/secondary-sector',
-    title: 'Вторинний сектор економіки',
-    shortTitle: 'Вторинний сектор',
+    id: "elephants",
+    subject: "biology",
+    slug: "elephants",
+    path: "/biology/elephants",
+    title: "Слони",
+    shortTitle: "Слони",
     description:
-      'Галузі промисловості, що перетворюють сировину первинного сектора на готові товари.',
-    documentTitle: 'Вторинний сектор | Географія | Синапс',
+      "Порівняння слона саванного та індійського за критеріями виду.",
+    documentTitle: "Слони | Біологія | Синапс",
   },
   {
-    id: 'europe',
-    subject: 'geography',
-    slug: 'europe',
-    path: '/geography/europe',
-    title: 'Європа',
-    shortTitle: 'Європа',
-    description: 'Загальна характеристика Європи.',
-    documentTitle: 'Європа | Географія | Синапс',
+    id: "scrapie",
+    subject: "biology",
+    slug: "scrapie",
+    path: "/biology/scrapie",
+    title: "Скрепі",
+    shortTitle: "Скрепі",
+    description:
+      "Захворювання, що викликає дегенерацію нервової системи у овець і кіз через пріони.",
+    documentTitle: "Скрепі | Біологія | Синапс",
   },
   {
-    id: 'asia',
-    subject: 'geography',
-    slug: 'asia',
-    path: '/geography/asia',
-    title: 'Азія',
-    shortTitle: 'Азія',
-    description: 'Загальна характеристика Азії.',
-    documentTitle: 'Азія | Географія | Синапс',
+    id: "mushrooms",
+    subject: "biology",
+    slug: "mushrooms",
+    path: "/biology/mushrooms",
+    title: "Незвичайні гриби",
+    shortTitle: "Гриби",
+    description:
+      "Характеристика та таксономічне положення Coprinopsis pulchricaerulea та Mycena chlorophos.",
+    documentTitle: "Гриби | Біологія | Синапс",
   },
   {
-    id: 'recreation',
-    subject: 'geography',
-    slug: 'recreation',
-    path: '/geography/recreation',
-    title: 'Рекреаційні ресурси Європи',
-    shortTitle: 'Рекреаційні ресурси',
-    description: 'Рекреаційні ресурси третинного сектора економіки Європи.',
-    documentTitle: 'Рекреаційні ресурси | Географія | Синапс',
+    id: "kingdoms-table",
+    subject: "biology",
+    slug: "kingdoms-table",
+    path: "/biology/kingdoms-table",
+    title: "Порівняння царств",
+    shortTitle: "Порівняння царств",
+    description:
+      "Порівняльна характеристика зелених рослин, справжніх грибів і справжніх тварин за основними ознаками.",
+    documentTitle: "Порівняння царств | Біологія | Синапс",
   },
   {
-    id: 'netherlands',
-    subject: 'geography',
-    slug: 'netherlands',
-    path: '/geography/netherlands',
-    title: 'Нідерланди',
-    shortTitle: 'Нідерланди',
+    id: "secondary-sector",
+    subject: "geography",
+    slug: "secondary-sector",
+    path: "/geography/secondary-sector",
+    title: "Вторинний сектор економіки",
+    shortTitle: "Вторинний сектор",
+    description:
+      "Галузі промисловості, що перетворюють сировину первинного сектора на готові товари.",
+    documentTitle: "Вторинний сектор | Географія | Синапс",
+  },
+  {
+    id: "europe",
+    subject: "geography",
+    slug: "europe",
+    path: "/geography/europe",
+    title: "Європа",
+    shortTitle: "Європа",
+    description: "Загальна характеристика Європи.",
+    documentTitle: "Європа | Географія | Синапс",
+  },
+  {
+    id: "asia",
+    subject: "geography",
+    slug: "asia",
+    path: "/geography/asia",
+    title: "Азія",
+    shortTitle: "Азія",
+    description: "Загальна характеристика Азії.",
+    documentTitle: "Азія | Географія | Синапс",
+  },
+  {
+    id: "recreation",
+    subject: "geography",
+    slug: "recreation",
+    path: "/geography/recreation",
+    title: "Рекреаційні ресурси Європи",
+    shortTitle: "Рекреаційні ресурси",
+    description: "Рекреаційні ресурси третинного сектора економіки Європи.",
+    documentTitle: "Рекреаційні ресурси | Географія | Синапс",
+  },
+  {
+    id: "netherlands",
+    subject: "geography",
+    slug: "netherlands",
+    path: "/geography/netherlands",
+    title: "Нідерланди",
+    shortTitle: "Нідерланди",
     description: 'Характеристика Нідерландів в рамках проєкту "Країни Європи".',
-    documentTitle: 'Нідерланди | Географія | Синапс',
+    documentTitle: "Нідерланди | Географія | Синапс",
   },
   {
-    id: 'european-states-comparison',
-    subject: 'geography',
-    slug: 'european-states-comparison',
-    path: '/geography/european-states-comparison',
-    title: 'Практична робота',
-    shortTitle: 'Порівняння держав Європи',
+    id: "european-states-comparison",
+    subject: "geography",
+    slug: "european-states-comparison",
+    path: "/geography/european-states-comparison",
+    title: "Практична робота",
+    shortTitle: "Порівняння держав Європи",
     description:
-      'Порівняльна характеристика двох держав Європи за планом практичної роботи.',
-    documentTitle: 'Порівняння держав Європи | Географія | Синапс',
+      "Порівняльна характеристика двох держав Європи за планом практичної роботи.",
+    documentTitle: "Порівняння держав Європи | Географія | Синапс",
   },
   {
-    id: 'songs',
-    subject: 'ukrainian-language',
-    slug: 'songs',
-    path: '/ukrainian-language/songs',
-    title: 'Пісні',
-    shortTitle: 'Пісні',
-    description: 'Аналіз звукового складу народних пісень.',
-    documentTitle: 'Пісні | Українська мова | Синапс',
-  }
+    id: "songs",
+    subject: "ukrainian-language",
+    slug: "songs",
+    path: "/ukrainian-language/songs",
+    title: "Пісні",
+    shortTitle: "Пісні",
+    description: "Аналіз звукового складу народних пісень.",
+    documentTitle: "Пісні | Українська мова | Синапс",
+  },
 ];
 
 export const homeMeta = {
-  title: 'Синапс | Портал робіт',
+  title: "Синапс | Портал робіт",
   subject: null,
-  featuredWorkId: 'asia',
+  featuredWorkId: "kingdoms-table",
 };
 
 export const notFoundMeta = {
-  title: 'Сторінку не знайдено | Синапс',
+  title: "Сторінку не знайдено | Синапс",
   subject: null,
 };
 
 function normalizePath(pathname) {
-  return pathname === '/' ? pathname : pathname.replace(/\/+$/, '');
+  return pathname === "/" ? pathname : pathname.replace(/\/+$/, "");
 }
 
 export function getSubject(id) {
@@ -174,15 +191,18 @@ export function getWorkByPath(pathname) {
 }
 
 export function getRouteMeta(pathname) {
-  if (pathname === '/') {
+  if (pathname === "/") {
     return {
       ...homeMeta,
-      description: 'Портал навчальних робіт Данила Павлюка імені Тетяни Каришевої.',
+      description:
+        "Портал навчальних робіт Данила Павлюка імені Тетяни Каришевої.",
     };
   }
 
   const normalizedPath = normalizePath(pathname);
-  const subject = subjects.find((item) => normalizePath(item.path) === normalizedPath);
+  const subject = subjects.find(
+    (item) => normalizePath(item.path) === normalizedPath,
+  );
   if (subject) {
     return {
       title: subject.documentTitle,
@@ -191,7 +211,9 @@ export function getRouteMeta(pathname) {
     };
   }
 
-  const work = works.find((item) => normalizePath(item.path) === normalizedPath);
+  const work = works.find(
+    (item) => normalizePath(item.path) === normalizedPath,
+  );
   if (work) {
     return {
       title: work.documentTitle,
@@ -202,7 +224,6 @@ export function getRouteMeta(pathname) {
 
   return {
     ...notFoundMeta,
-    description: 'Запитану сторінку не знайдено на порталі.',
+    description: "Запитану сторінку не знайдено на порталі.",
   };
 }
-

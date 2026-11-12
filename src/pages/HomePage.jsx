@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import WorkCard from '../components/WorkCard.jsx';
-import { homeMeta, subjects, getWorkById } from '../data/works.js';
-import asiaImg from '../assets/Asia/map.png';
+import { Link } from "react-router-dom";
+import WorkCard from "../components/WorkCard.jsx";
+import { homeMeta, subjects, getWorkById } from "../data/works.js";
+import tree from "../assets/KingdomsTable/tree.jpg";
 
 export default function HomePage() {
   const featuredWork = getWorkById(homeMeta.featuredWorkId);
@@ -14,9 +14,7 @@ export default function HomePage() {
           <h1>Синапс</h1>
           <p>імені Тетяни Каришевої</p>
           <br />
-          <p>
-            Оберіть необхідний предмет та переглядайте додані роботи.
-          </p>
+          <p>Оберіть необхідний предмет та переглядайте додані роботи.</p>
         </div>
 
         {featuredWork ? (
@@ -26,12 +24,7 @@ export default function HomePage() {
             data-subject={featuredWork.subject}
             aria-label={`Перейти до новинки: ${featuredWork.title}`}
           >
-            <img
-              src={asiaImg}
-              alt="Азія — Карта"
-              loading="eager"
-              decoding="async"
-            />
+            <img src={tree} alt="Дерево" loading="eager" decoding="async" />
             <div className="home-hero-caption">
               <span>🌟 НОВИНКА НА ПОРТАЛІ</span>
               <strong>
@@ -44,7 +37,10 @@ export default function HomePage() {
       </header>
 
       {featuredWork ? (
-        <section className="home-section" aria-labelledby="featured-work-heading">
+        <section
+          className="home-section"
+          aria-labelledby="featured-work-heading"
+        >
           <h2 id="featured-work-heading">Рекомендована робота</h2>
           <WorkCard work={featuredWork} headingLevel="h3" showKicker />
         </section>

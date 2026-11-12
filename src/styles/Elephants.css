@@ -70,13 +70,6 @@
   background-color: var(--clr-row-alt);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .bt-table tbody tr:hover {
-    background-color: var(--clr-row-alt);
-    transition: background-color 0.3s ease;
-  }
-}
-
 @media (min-width: 768px) {
   .bt-body {
     padding: 2rem 3rem 3rem;
