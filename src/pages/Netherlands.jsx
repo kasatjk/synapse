@@ -1,78 +1,80 @@
-import { useState } from 'react';
-import WorkShell from '../components/WorkShell.jsx';
-import Summary from '../components/Summary.jsx';
-import amsterdam from '../assets/Netherlands/amsterdam.webp';
-import tulips from '../assets/Netherlands/tulips.webp';
-import rotterdamPort from '../assets/Netherlands/rotterdam-port.webp';
-import kinderdijk from '../assets/Netherlands/kinderdijk.webp';
-import '../styles/Netherlands.css';
+import { useState } from "react";
+import WorkShell from "../components/WorkShell.jsx";
+import Summary from "../components/Summary.jsx";
+import amsterdam from "../assets/Netherlands/amsterdam.webp";
+import tulips from "../assets/Netherlands/tulips.webp";
+import rotterdamPort from "../assets/Netherlands/rotterdam-port.webp";
+import kinderdijk from "../assets/Netherlands/kinderdijk.webp";
+import flag from "../assets/Netherlands/flag.jpg";
+import "../styles/Netherlands.css";
 
 const photos = [
   {
     src: amsterdam,
-    alt: 'Кольорові історичні будинки вздовж каналу на вулиці Дамрак в Амстердамі',
-    caption: 'Амстердам — столиця каналів та культури',
+    alt: "Кольорові історичні будинки вздовж каналу на вулиці Дамрак в Амстердамі",
+    caption: "Амстердам — столиця каналів та культури",
   },
   {
     src: kinderdijk,
-    alt: 'Історичні вітряки Кіндердейка на тлі польдерного ландшафту',
-    caption: 'Вітряки Кіндердейка (ЮНЕСКО)',
+    alt: "Історичні вітряки Кіндердейка на тлі польдерного ландшафту",
+    caption: "Вітряки Кіндердейка (ЮНЕСКО)",
   },
   {
     src: tulips,
-    alt: 'Квітучі поля нідерландських тюльпанів навесні',
-    caption: 'Тюльпанові плантації',
+    alt: "Квітучі поля нідерландських тюльпанів навесні",
+    caption: "Тюльпанові плантації",
   },
   {
     src: rotterdamPort,
-    alt: 'Гігантський логістичний порт Роттердама з контейнеровозами',
-    caption: 'Порт Роттердама — морські ворота Європи',
+    alt: "Гігантський логістичний порт Роттердама з контейнеровозами",
+    caption: "Порт Роттердама — морські ворота Європи",
   },
 ];
 
 const metrics = [
   {
-    label: 'Офіційна назва',
-    value: 'Nederland',
-    detail: 'Королівство Нідерланди (Koninkrijk der Nederlanden)',
+    label: "Офіційна назва",
+    value: "Nederland",
+    detail: "Королівство Нідерланди (Koninkrijk der Nederlanden)",
   },
   {
-    label: 'Столиця',
-    value: 'Амстердам',
-    detail: 'Уряд, парламент та монарша резиденція — у місті Гаага.',
+    label: "Столиця",
+    value: "Амстердам",
+    detail: "Уряд, парламент та монарша резиденція — у місті Гаага.",
   },
   {
-    label: 'Офіційна мова',
-    value: 'Нідерландська',
-    detail: 'Також офіційний статус має західнофризька мова (Фрисландія).',
+    label: "Офіційна мова",
+    value: "Нідерландська",
+    detail: "Також офіційний статус має західнофризька мова (Фрисландія).",
   },
   {
-    label: 'Валюта',
-    value: 'Євро',
-    unit: 'EUR',
-    detail: 'Запроваджено в 2002 році, замінивши нідерландський гульден.',
+    label: "Валюта",
+    value: "Євро",
+    unit: "EUR",
+    detail: "Запроваджено в 2002 році, замінивши нідерландський гульден.",
   },
   {
-    label: 'Населення',
-    value: '18,5',
-    unit: 'млн',
-    detail: 'Середня густота: понад 424 осіб/км² (найвища в ЄС).',
+    label: "Населення",
+    value: "18,5",
+    unit: "млн",
+    detail: "Середня густота: понад 424 осіб/км² (найвища в ЄС).",
   },
   {
-    label: 'Площа території',
-    value: '41,543',
-    unit: 'км²',
-    detail: 'Близько 17% суші відвойовано у Північного моря (польдери).',
+    label: "Площа території",
+    value: "41,543",
+    unit: "км²",
+    detail: "Близько 17% суші відвойовано у Північного моря (польдери).",
   },
   {
-    label: 'Форма правління',
-    value: 'Конституційна монархія',
-    detail: 'Парламентська демократія з розвиненою коаліційною системою.',
+    label: "Форма правління",
+    value: "Конституційна монархія",
+    detail: "Парламентська демократія з розвиненою коаліційною системою.",
   },
   {
-    label: 'Тип економіки',
-    value: 'Постіндустріальна',
-    detail: 'Високотехнологічний агросектор, фінансовий та логістичний хаб світового рівня.',
+    label: "Тип економіки",
+    value: "Постіндустріальна",
+    detail:
+      "Високотехнологічний агросектор, фінансовий та логістичний хаб світового рівня.",
   },
 ];
 
@@ -100,9 +102,13 @@ export default function Netherlands() {
     <WorkShell
       title="Нідерланди"
       subtitle="Країни Європи (Je Maintiendrai)"
+      backgroundImage={flag}
       className="netherlands-page"
     >
-      <section className="netherlands-gallery" aria-label="Фотографії Нідерландів">
+      <section
+        className="netherlands-gallery"
+        aria-label="Фотографії Нідерландів"
+      >
         {previousPhotoIndex !== null && (
           <img
             className="netherlands-gallery-image"
@@ -113,18 +119,18 @@ export default function Netherlands() {
         )}
         <img
           key={activePhoto.src}
-          className={`netherlands-gallery-image${loadedPhotoSrc === activePhoto.src ? ' netherlands-gallery-image--loaded' : ''}`}
+          className={`netherlands-gallery-image${loadedPhotoSrc === activePhoto.src ? " netherlands-gallery-image--loaded" : ""}`}
           src={activePhoto.src}
           alt={activePhoto.alt}
           fetchPriority="high"
           onLoad={() => {
             setLoadedPhotoSrc(activePhoto.src);
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
               setPreviousPhotoIndex(null);
             }
           }}
           onTransitionEnd={(event) => {
-            if (event.propertyName === 'opacity') {
+            if (event.propertyName === "opacity") {
               setPreviousPhotoIndex(null);
             }
           }}
@@ -141,7 +147,13 @@ export default function Netherlands() {
             onClick={() => showPhoto(-1)}
           >
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-              <path d="m15 18-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="m15 18-6-6 6-6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
           <div className="netherlands-gallery-dots" aria-label="Вибрати фото">
@@ -151,7 +163,7 @@ export default function Netherlands() {
                 className="netherlands-gallery-dot"
                 type="button"
                 aria-label={`Фото ${index + 1}: ${photo.caption}`}
-                aria-current={activePhotoIndex === index ? 'true' : undefined}
+                aria-current={activePhotoIndex === index ? "true" : undefined}
                 onClick={() => selectPhoto(index)}
               />
             ))}
@@ -163,7 +175,13 @@ export default function Netherlands() {
             onClick={() => showPhoto(1)}
           >
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-              <path d="m9 18 6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="m9 18 6-6-6-6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
         </div>
@@ -172,17 +190,22 @@ export default function Netherlands() {
         </p>
       </section>
 
-      <section className="netherlands-facts" aria-labelledby="netherlands-facts-title">
+      <section
+        className="netherlands-facts"
+        aria-labelledby="netherlands-facts-title"
+      >
         <div className="netherlands-section-heading">
           <p className="netherlands-eyebrow">Короткі відомості</p>
-          <h2 id="netherlands-facts-title" className="report-section-title">Візитна картка держави</h2>
+          <h2 id="netherlands-facts-title" className="report-section-title">
+            Візитна картка держави
+          </h2>
         </div>
 
         <div className="netherlands-metrics">
           {metrics.map((metric, index) => (
             <article
               key={metric.label}
-              className={`netherlands-metric ${metric.className ?? ''}`}
+              className={`netherlands-metric ${metric.className ?? ""}`}
             >
               <span className="netherlands-metric-index">0{index + 1}</span>
               <p className="netherlands-metric-label">{metric.label}</p>
@@ -198,11 +221,13 @@ export default function Netherlands() {
 
       <Summary title="Підсумок дослідження">
         <p>
-          Нідерланди — одна з найбільш густонаселених та високотехнологічних держав Європи.
-          Завдяки унікальній системі дамб та каналів країна відвоювала значні площі в моря.
-          Нідерландська економіка входить у десятку світових експортерів завдяки надпотужному
-          портовому хабу Роттердама, інноваційному тепличному агрокомплексу (друге місце у світі
-          після США за експортом агропродукції) та розвиненому сектору цифрових і фінансових послуг.
+          Нідерланди — одна з найбільш густонаселених та високотехнологічних
+          держав Європи. Завдяки унікальній системі дамб та каналів країна
+          відвоювала значні площі в моря. Нідерландська економіка входить у
+          десятку світових експортерів завдяки надпотужному портовому хабу
+          Роттердама, інноваційному тепличному агрокомплексу (друге місце у
+          світі після США за експортом агропродукції) та розвиненому сектору
+          цифрових і фінансових послуг.
         </p>
       </Summary>
     </WorkShell>

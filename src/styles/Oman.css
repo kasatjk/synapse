@@ -1,0 +1,335 @@
+.oman-page {
+  --oman-accent: #d4145a;
+
+  max-width: 60rem;
+  margin: 0 auto;
+  animation: slideUpFade 0.5s var(--easing-smooth) forwards;
+}
+
+.oman-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 2.05;
+  min-height: 16rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  background: #111827;
+  color: #f8fafc;
+}
+
+.oman-gallery-image,
+.oman-gallery-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.oman-gallery-image {
+  display: block;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.oman-gallery-image--loaded {
+  opacity: 1;
+}
+
+.oman-gallery-shade {
+  background: linear-gradient(0deg, rgb(7 12 22 / 88%), transparent 62%);
+  pointer-events: none;
+}
+
+.oman-gallery-caption {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.15rem;
+  left: 1.5rem;
+  z-index: 1;
+}
+
+.oman-gallery-caption p {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.15rem, 3vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.oman-gallery-caption small {
+  color: #d1d5db;
+  font-size: 0.75rem;
+}
+
+.oman-gallery-caption a {
+  color: inherit;
+  text-underline-offset: 0.15em;
+}
+
+.oman-gallery-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.oman-gallery-arrow,
+.oman-gallery-dot {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 38%);
+  background: rgb(15 23 42 / 68%);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.oman-gallery-arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+}
+
+.oman-gallery-arrow svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.oman-gallery-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.35rem;
+}
+
+.oman-gallery-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.oman-gallery-dot[aria-current='true'] {
+  border-color: var(--oman-accent);
+  background: var(--oman-accent);
+}
+
+.oman-gallery-count {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.1rem;
+  z-index: 1;
+  margin: 0;
+  color: #e5e7eb;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.oman-hero {
+  padding: clamp(1.5rem, 5vw, 3rem) 0 0;
+}
+
+.oman-eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--oman-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.oman-hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.oman-intro {
+  max-width: 45rem;
+  margin: 1rem 0 0;
+  color: var(--clr-text-muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.oman-facts {
+  margin-top: clamp(2rem, 6vw, 3rem);
+}
+
+.oman-section-heading {
+  margin-bottom: 1.15rem;
+}
+
+.oman-section-heading .oman-eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.oman-section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.04em;
+}
+
+.oman-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.oman-metric {
+  position: relative;
+  display: flex;
+  min-height: 13rem;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.25rem;
+  border: 1px solid #374151;
+  border-top: 3px solid var(--oman-accent);
+  border-radius: var(--radius-md);
+  background: #111827;
+  color: #f8fafc;
+  box-shadow: 0 12px 26px -18px rgb(0 0 0 / 55%);
+  transition: transform 0.4s var(--easing-spring);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .oman-metric:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.oman-metric-index {
+  align-self: flex-end;
+  color: #9ca3af;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.oman-metric-label {
+  margin: 0.75rem 0 0.4rem;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.oman-metric-value {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
+.oman-metric-value span {
+  color: var(--oman-accent);
+  font-size: 0.72em;
+  letter-spacing: -0.02em;
+}
+
+.oman-metric-detail {
+  margin: auto 0 0;
+  padding-top: 0.85rem;
+  color: #aab7c7;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.oman-gallery-arrow:focus-visible,
+.oman-gallery-dot:focus-visible {
+  outline-color: var(--oman-accent);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .oman-gallery-arrow:hover {
+    border-color: var(--oman-accent);
+    background: var(--oman-accent);
+    transform: scale(1.05);
+  }
+
+  .oman-gallery-dot:not([aria-current='true']):hover {
+    border-color: var(--oman-accent);
+  }
+}
+
+@media (max-width: 900px) {
+  .oman-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .oman-gallery {
+    aspect-ratio: 1.25;
+    min-height: 15rem;
+  }
+
+  .oman-gallery-caption {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    padding-right: 3.5rem;
+  }
+
+  .oman-gallery-controls {
+    top: 0.65rem;
+    right: 0.65rem;
+    gap: 0.2rem;
+  }
+
+  .oman-gallery-arrow {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .oman-gallery-dots {
+    gap: 0.25rem;
+  }
+
+  .oman-gallery-count {
+    right: 1rem;
+    bottom: 1.05rem;
+  }
+
+  .oman-gallery-caption small {
+    display: block;
+    max-width: 17rem;
+  }
+
+  .oman-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .oman-metric {
+    min-height: 11rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oman-gallery-image {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .oman-metric-detail {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .oman-metric {
+    min-height: 9.5rem;
+    padding: 1rem;
+  }
+}

@@ -17,6 +17,7 @@ const Asia = lazy(() => import('./pages/Asia.jsx'));
 const EconSector = lazy(() => import('./pages/EconSector.jsx'));
 const Recreation = lazy(() => import('./pages/Recreation.jsx'));
 const Netherlands = lazy(() => import('./pages/Netherlands.jsx'));
+const Oman = lazy(() => import('./pages/Oman.jsx'));
 const EuropeanStatesComparison = lazy(() => import('./pages/EuropeanStatesComparison.jsx'));
 const Songs = lazy(() => import('./pages/Songs.jsx'));
 
@@ -31,6 +32,7 @@ const workPageComponents = {
   'secondary-sector': EconSector,
   recreation: Recreation,
   netherlands: Netherlands,
+  oman: Oman,
   'european-states-comparison': EuropeanStatesComparison,
   songs: Songs,
 };

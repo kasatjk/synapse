@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import WorkCard from "../components/WorkCard.jsx";
 import { homeMeta, subjects, getWorkById } from "../data/works.js";
-import tree from "../assets/KingdomsTable/tree.jpg";
+import oman from "../assets/Oman/bilad-sayt.jpg";
 
 export default function HomePage() {
   const featuredWork = getWorkById(homeMeta.featuredWorkId);
@@ -24,9 +24,9 @@ export default function HomePage() {
             data-subject={featuredWork.subject}
             aria-label={`Перейти до новинки: ${featuredWork.title}`}
           >
-            <img src={tree} alt="Дерево" loading="eager" decoding="async" />
+            <img src={oman} alt="Дерево" loading="eager" decoding="async" />
             <div className="home-hero-caption">
-              <span>🌟 НОВИНКА НА ПОРТАЛІ</span>
+              <span>НОВИНКА НА ПОРТАЛІ</span>
               <strong>
                 {featuredWork.title}
                 <span aria-hidden="true">→</span>

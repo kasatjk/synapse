@@ -136,6 +136,16 @@ export const works = [
     documentTitle: "Нідерланди | Географія | Синапс",
   },
   {
+    id: "oman",
+    subject: "geography",
+    slug: "oman",
+    path: "/geography/oman",
+    title: "Оман",
+    shortTitle: "Оман",
+    description: "Характеристика Оману.",
+    documentTitle: "Оман | Географія | Синапс",
+  },
+  {
     id: "european-states-comparison",
     subject: "geography",
     slug: "european-states-comparison",
@@ -161,7 +171,7 @@ export const works = [
 export const homeMeta = {
   title: "Синапс | Портал робіт",
   subject: null,
-  featuredWorkId: "kingdoms-table",
+  featuredWorkId: "oman",
 };
 
 export const notFoundMeta = {
